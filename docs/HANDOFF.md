@@ -37,3 +37,12 @@ frozen until the cloud work is pulled back.
 ## Data in the cloud
 `raw/` and `data/` are not in git. `scripts/download_data.py` uses the Kaggle CLI (needs a Kaggle token) for twcs.
 If no token is available, try a public mirror of the same file; otherwise stop and say exactly what is needed.
+
+## Status after the cloud session (Oct 29, 2026)
+- Data: the cloud container could not reach Kaggle, Hugging Face or Groq. The GitHub Actions `reproduce` job
+  downloads the data (Hugging Face mirror of twcs.csv), checks it (2,811,774 rows; 550/550 eval tweets match),
+  runs `make all` and commits `outputs/`. SLA numbers came out identical to the local Kaggle run.
+- Done: SLA analytics, classical eval (final), LLM eval (interim: 154 cached test tickets), urgency rules,
+  HITL queue app, ROI, 60 tests + CI, deploy config (not deployed), all docs, LEARN, RESUME-FACTS.
+- Still needs a `GROQ_API_KEY`: the remaining ~700 LLM calls (full 300-ticket LLM rows, few-shot ablation,
+  AI-raised urgency, LLM drafts in the app). Add the repo secret and run the `reproduce` job.

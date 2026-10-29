@@ -114,4 +114,4 @@ if b2.button("Reject draft (reply by hand later)"):
 st.divider()
 st.write("Up next")
 st.dataframe(pending.iloc[1:21][["eval_id", "level", "brand", "suggested_queue", "clean_text"]],
-             hide_index=True, use_container_width=True)
+             hide_index=True, width="stretch")
