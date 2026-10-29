@@ -1,0 +1,31 @@
+model,eval_id,text,truth,predicted
+gpt-oss-20b,101,Wasted food as @user delivery tonight due to go off tomorrow & Sat. 🙄 <url>,complaint_feedback,delivery
+gpt-oss-20b,105,Makes me excited walking back from uni to see the Christmas lights starting to get put up at George Square🎅🎄,other,complaint_feedback
+gpt-oss-20b,110,"gutted, got this Berry selection, which is usually my favourite but my gosh, everything in this selection is sour! #fail #help <url>",complaint_feedback,refund_return
+gpt-oss-20b,117,OMFG @user! Using the Target app to redeem cartwheel deals for MONTHS but now it's an endless sign-in loop! Get your shit together!,account,other
+gpt-oss-20b,120,That @user sold notification sound 😍,complaint_feedback,other
+gpt-oss-20b,122,"OK @user. One, I can understand, but this is the 2nd box in a row to show up like this. <url>",refund_return,other
+gpt-oss-20b,126,"Tracking says my keyboard is out for delivery, but my book from Amazon arrived this morning instead. Eh? What gives?",delivery,refund_return
+gpt-oss-20b,127,just bought these from morrisons in Eccles. HOW CAN SOMETHING BE 6 DAYS OUT OF DATE? I won’t be happy if I get sick. <url>,complaint_feedback,refund_return
+gpt-oss-20b,130,I started a free trial of prime last night and want to cancel it but there is no option for this says it will ‘be active soon’,account,order_change
+gpt-oss-20b,131,The affected number is 09020748642,other,account
+gpt-oss-20b,133,Hey @user your Garden City Ks store is selling expired Ripple Milk.,complaint_feedback,refund_return
+gpt-oss-20b,134,"hi, can you tell me how your eligibility works for getting free £6 for spending £30 on gift cards- I didn’t get it & spent £30.",billing_payment,complaint_feedback
+gpt-oss-20b,135,"Pissed at @user PAD is coming out early. All they do is say ""we appreciate you told us you didn't get notification"" & won't fix #BS",billing_payment,complaint_feedback
+gpt-oss-20b,141,It looks like @user #store3897 doesn’t know the difference between vinyl vs. fabric printing #sigh #Google,complaint_feedback,other
+gpt-oss-20b,146,This is how you treat something marked fragile @user @user ? <url>,refund_return,complaint_feedback
+gpt-oss-120b,101,Wasted food as @user delivery tonight due to go off tomorrow & Sat. 🙄 <url>,complaint_feedback,delivery
+gpt-oss-120b,105,Makes me excited walking back from uni to see the Christmas lights starting to get put up at George Square🎅🎄,other,complaint_feedback
+gpt-oss-120b,120,That @user sold notification sound 😍,complaint_feedback,other
+gpt-oss-120b,122,"OK @user. One, I can understand, but this is the 2nd box in a row to show up like this. <url>",refund_return,other
+gpt-oss-120b,124,"Hi! I would like to cancel my premium account but just found out that I got charged today. If I cancel the premium service now, will I still be able to use it for a month since it’s already paid? Please advise thank you!",account,order_change
+gpt-oss-120b,127,just bought these from morrisons in Eccles. HOW CAN SOMETHING BE 6 DAYS OUT OF DATE? I won’t be happy if I get sick. <url>,complaint_feedback,refund_return
+gpt-oss-120b,131,The affected number is 09020748642,other,account
+gpt-oss-120b,133,Hey @user your Garden City Ks store is selling expired Ripple Milk.,complaint_feedback,refund_return
+gpt-oss-120b,134,"hi, can you tell me how your eligibility works for getting free £6 for spending £30 on gift cards- I didn’t get it & spent £30.",billing_payment,other
+gpt-oss-120b,135,"Pissed at @user PAD is coming out early. All they do is say ""we appreciate you told us you didn't get notification"" & won't fix #BS",billing_payment,other
+gpt-oss-120b,139,since when do you charge 50p for air at your petrol stations? You’ve just lost my business over something so trivial and petty.,complaint_feedback,billing_payment
+gpt-oss-120b,141,It looks like @user #store3897 doesn’t know the difference between vinyl vs. fabric printing #sigh #Google,complaint_feedback,other
+gpt-oss-120b,146,This is how you treat something marked fragile @user @user ? <url>,refund_return,delivery
+gpt-oss-120b,148,"I swear i can’t buy @user clothes without buying them six sizes too big, one wash and dry per car instructions and here were are with an extra small. Ps. I’m not an extra small.",complaint_feedback,refund_return
+gpt-oss-120b,152,plz I did subscription of #300 for 1gb ... only work the day I did d sub ... my no is 09027064862,other,billing_payment

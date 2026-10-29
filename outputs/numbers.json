@@ -152,10 +152,22 @@
     "breach_pct_at_15min": 58.6,
     "breach_pct_at_240min": 17.2,
     "breach_pct_at_60min": 35.0,
+    "breach_pct_by_weekday": {
+      "Friday": 34.6,
+      "Monday": 36.1,
+      "Saturday": 42.1,
+      "Sunday": 40.9,
+      "Thursday": 32.2,
+      "Tuesday": 32.5,
+      "Wednesday": 30.0
+    },
     "fastest_brand": "Postmates_Help",
     "fastest_brand_median_min": 2.3,
     "forecast_best_method": "seasonal_naive",
     "forecast_brand": "AmazonHelp",
+    "forecast_brand_breach_pct": 3.3,
+    "forecast_brand_median_frt_min": 10.4,
+    "forecast_brand_p90_frt_min": 31.3,
     "forecast_brand_tickets_per_week": 12540,
     "forecast_wape_pct": {
       "flat_last_week_mean": 34.9,
