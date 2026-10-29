@@ -67,6 +67,15 @@ def score(name, labels, preds, cost_per_ticket, latencies, extra=None):
     return row
 
 
+COVERED = ["delivery", "order_change", "refund_return", "billing_payment", "account", "talk_to_human"]
+
+
+def covered_accuracy(labels, preds):
+    """Accuracy only on tickets whose true queue has Bitext training data (no complaint_feedback / other)."""
+    pairs = [(t, p) for t, p in zip(labels, preds) if t in COVERED]
+    return round(100 * sum(t == p for t, p in pairs) / max(len(pairs), 1), 1)
+
+
 def run_classical(dev, test, holdout):
     model, in_domain_acc, n_train = classical.train_bitext()
     threshold = classical.tune_threshold(model, dev.clean_text, dev.label.tolist(), macro_f1)
@@ -78,6 +87,7 @@ def run_classical(dev, test, holdout):
         "bitext_train_rows": n_train,
         "other_threshold": threshold,
         "accuracy_without_threshold_pct": round(100 * accuracy_score(test.label, no_threshold), 1),
+        "covered_queues_accuracy_pct": covered_accuracy(test.label, preds),
     })
     holdout_preds, _, _ = classical.predict_with_threshold(model, holdout.clean_text, threshold)
     return row, preds, holdout_preds
@@ -122,6 +132,29 @@ def urgency_stats(texts, queues, truth, ai_urgent=None):
     return out
 
 
+def interim_cached_subset(test, classical_preds):
+    """Score every model on the test tickets that BOTH LLMs already have cached answers for.
+
+    Only used while the full LLM run is missing. It is a partial result: fewer tickets, wider intervals.
+    """
+    mask = [llm.is_cached(SMALL, llm.triage_messages(t)) and llm.is_cached(LARGE, llm.triage_messages(t))
+            for t in test.clean_text]
+    sub = test[mask].reset_index(drop=True)
+    if len(sub) < 30:
+        return None
+    cls = [p for p, m in zip(classical_preds, mask) if m]
+    rows = [score("tfidf_logreg", sub.label.tolist(), cls, 0.0, [0.0], {"covered_queues_accuracy_pct":
+                                                                      covered_accuracy(sub.label, cls)})]
+    for name, model in (("gpt-oss-20b", SMALL), ("gpt-oss-120b", LARGE)):
+        row, preds, _ = run_llm(name, model, sub)
+        row["covered_queues_accuracy_pct"] = covered_accuracy(sub.label, preds)
+        rows.append(row)
+    rows[0]["latency_p50_ms"] = rows[0]["latency_p95_ms"] = None  # measured on the full set instead
+    return {"interim": True, "tickets": len(sub), "eval_ids": sub.eval_id.tolist(),
+            "note": "partial: only test tickets with cached answers from both LLMs; not the headline result",
+            "models": {r["model"]: r for r in rows}}
+
+
 def failures(test, preds, per_model=15):
     """Wrong answers per model (first `per_model` by eval_id) so a human can read what goes wrong."""
     rows = []
@@ -161,6 +194,7 @@ def main():
            "holdout": {"rules_with_tfidf_queue": urgency_stats(holdout.clean_text, holdout_classical, holdout.urgent)}}
     for name in urgent_flags:
         urg["test"][name] = urgency_stats(test.clean_text, preds[name], test.urgent, urgent_flags[name])
+    interim = interim_cached_subset(test, preds["tfidf_logreg"]) if skipped.get("gpt-oss-20b") else None
     if llm_ready(LARGE, holdout.clean_text)[0]:
         hold = llm_results(LARGE, holdout.clean_text)
         urg["holdout"]["gpt-oss-120b"] = urgency_stats(holdout.clean_text, [r["queue"] for r in hold],
@@ -182,12 +216,16 @@ def main():
         "models": {r["model"]: r for r in rows},
         "few_shot_ablation_dev": {r["model"]: r for r in ablation},
         "skipped": skipped,
+        "interim_cached_subset": interim,
         "urgency": urg,
     })
     print(flat.to_string())
     print(urg)
     for name, why in skipped.items():
         print(name, "->", why)
+    if interim:
+        print("INTERIM (partial) on", interim["tickets"], "cached tickets:")
+        print(pd.DataFrame(interim["models"].values()).drop(columns=["per_class_f1"]).to_string())
 
 
 if __name__ == "__main__":

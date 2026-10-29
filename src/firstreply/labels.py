@@ -1,6 +1,6 @@
 """The routing queues a ticket can go to, and how Bitext's 27 intents map onto them.
 
-We route to queues (teams), not to the dataset's own categories. See docs/adr/0002-queue-taxonomy.md.
+We route to queues (teams), not to the dataset's own categories. See ADR-2 in docs/DECISIONS.md.
 """
 QUEUES = [
     "delivery",            # where is my order, late / missed / wrong-address delivery, delivery options
