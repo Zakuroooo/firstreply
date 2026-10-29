@@ -1,0 +1,6 @@
+.venv
+raw
+data
+.git
+.env
+app/approvals.db

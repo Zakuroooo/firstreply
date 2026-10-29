@@ -5,6 +5,7 @@ What runs where (chosen to fit Groq's free tier: 200K tokens per model per day):
 - dev split (100): zero-shot vs few-shot ablation on gpt-oss-20b (few-shot examples come from dev and are left out)
 - urgency holdout (150 fresh tweets): rules vs rules + AI-may-raise, using gpt-oss-120b
 Run: python -m firstreply.evals   (LLM results come from outputs/llm_cache/; a key is only needed for new calls)
+With no key and an incomplete cache, the LLM rows are skipped and the reason is written to numbers.json.
 """
 import numpy as np
 import pandas as pd
@@ -66,18 +67,26 @@ def score(name, labels, preds, cost_per_ticket, latencies, extra=None):
     return row
 
 
-def run_classical(dev, test):
+def run_classical(dev, test, holdout):
     model, in_domain_acc, n_train = classical.train_bitext()
     threshold = classical.tune_threshold(model, dev.clean_text, dev.label.tolist(), macro_f1)
-    preds, _, ms = classical.predict_with_threshold(model, test.clean_text, threshold)
+    preds, _, _ = classical.predict_with_threshold(model, test.clean_text, threshold)
     no_threshold, _, _ = classical.predict_with_threshold(model, test.clean_text, 0.0)
-    row = score("tfidf_logreg", test.label.tolist(), preds, 0.0, [ms], {
+    latencies = classical.single_ticket_latency_ms(model, test.clean_text)
+    row = score("tfidf_logreg", test.label.tolist(), preds, 0.0, latencies, {
         "bitext_in_domain_accuracy_pct": round(100 * in_domain_acc, 1),
         "bitext_train_rows": n_train,
         "other_threshold": threshold,
         "accuracy_without_threshold_pct": round(100 * accuracy_score(test.label, no_threshold), 1),
     })
-    return row, preds
+    holdout_preds, _, _ = classical.predict_with_threshold(model, holdout.clean_text, threshold)
+    return row, preds, holdout_preds
+
+
+def llm_ready(model_name, texts, examples=()):
+    """An LLM can be scored only if a key is set or every call is already cached. Returns (ready, cached)."""
+    cached = sum(llm.is_cached(model_name, llm.triage_messages(t, examples)) for t in texts)
+    return llm.has_key() or cached == len(texts), cached
 
 
 def llm_results(model_name, texts, examples=()):
@@ -96,46 +105,66 @@ def run_llm(name, model_name, frame, examples=()):
     return row, preds, [r["urgent"] for r in results]
 
 
-def urgency_stats(texts, queues, ai_urgent, truth):
-    """Recall/precision of P1 for rules alone vs rules + AI-may-raise."""
+def urgency_stats(texts, queues, truth, ai_urgent=None):
+    """Recall/precision of P1 for rules alone, and for rules + AI-may-raise when AI flags are given."""
     truth = np.array(truth, dtype=bool)
     rules = np.array([urgency.rule_level(t, q)[0] == "P1" for t, q in zip(texts, queues)])
-    both = np.array([urgency.final_level(t, q, a)[0] == "P1" for t, q, a in zip(texts, queues, ai_urgent)])
 
     def stats(pred):
         tp = int((pred & truth).sum())
         return {"recall_pct": round(100 * tp / max(truth.sum(), 1), 1),
                 "precision_pct": round(100 * tp / max(pred.sum(), 1), 1),
                 "flagged": int(pred.sum()), "caught": tp}
-    return {"urgent": int(truth.sum()), "tickets": len(truth), "rules_only": stats(rules),
-            "rules_plus_ai_raise": stats(both)}
+    out = {"urgent": int(truth.sum()), "tickets": len(truth), "rules_only": stats(rules)}
+    if ai_urgent is not None:
+        both = np.array([urgency.final_level(t, q, a)[0] == "P1" for t, q, a in zip(texts, queues, ai_urgent)])
+        out["rules_plus_ai_raise"] = stats(both)
+    return out
+
+
+def failures(test, preds, per_model=15):
+    """Wrong answers per model (first `per_model` by eval_id) so a human can read what goes wrong."""
+    rows = []
+    for name, p in preds.items():
+        wrong = test.assign(pred=p)[lambda d: d.pred != d.label].sort_values("eval_id").head(per_model)
+        rows += [{"model": name, "eval_id": r.eval_id, "text": r.clean_text, "truth": r.label, "predicted": r.pred}
+                 for r in wrong.itertuples()]
+    return pd.DataFrame(rows)
 
 
 def main():
     dev, test = load_evalset()
+    holdout = load_holdout()
     examples, example_ids = few_shot_examples(dev)
-    rows, preds, urgent_flags = [], {}, {}
+    dev_rest = dev[~dev.eval_id.isin(example_ids)].reset_index(drop=True)
+    rows, ablation, preds, urgent_flags, skipped = [], [], {}, {}, {}
 
-    row, preds["tfidf_logreg"] = run_classical(dev, test)
+    row, preds["tfidf_logreg"], holdout_classical = run_classical(dev, test, holdout)
     rows.append(row)
     for name, model in (("gpt-oss-20b", SMALL), ("gpt-oss-120b", LARGE)):
+        ready, cached = llm_ready(model, test.clean_text)
+        if not ready:
+            skipped[name] = f"not run: no GROQ_API_KEY and only {cached}/{len(test)} calls cached"
+            continue
         row, preds[name], urgent_flags[name] = run_llm(name, model, test)
         rows.append(row)
 
     # few-shot ablation on dev (examples removed from the dev rows they would leak into)
-    dev_rest = dev[~dev.eval_id.isin(example_ids)].reset_index(drop=True)
-    ablation = [run_llm("gpt-oss-20b zero-shot", SMALL, dev_rest)[0],
-                run_llm("gpt-oss-20b few-shot", SMALL, dev_rest, examples)[0]]
+    if llm_ready(SMALL, dev_rest.clean_text)[0] and llm_ready(SMALL, dev_rest.clean_text, examples)[0]:
+        ablation = [run_llm("gpt-oss-20b zero-shot", SMALL, dev_rest)[0],
+                    run_llm("gpt-oss-20b few-shot", SMALL, dev_rest, examples)[0]]
+    else:
+        skipped["few_shot_ablation"] = "not run: needs GROQ_API_KEY or a full cache"
 
     # urgency on the test split and on the fresh holdout (rules frozen before the holdout was drawn)
-    holdout = load_holdout()
-    hold = llm_results(LARGE, holdout.clean_text)
-    urg = {
-        "test": {name: urgency_stats(test.clean_text, preds[name], urgent_flags[name], test.urgent)
-                 for name in urgent_flags},
-        "holdout_gpt-oss-120b": urgency_stats(holdout.clean_text, [r["queue"] for r in hold],
-                                              [r["urgent"] for r in hold], holdout.urgent),
-    }
+    urg = {"test": {"rules_with_tfidf_queue": urgency_stats(test.clean_text, preds["tfidf_logreg"], test.urgent)},
+           "holdout": {"rules_with_tfidf_queue": urgency_stats(holdout.clean_text, holdout_classical, holdout.urgent)}}
+    for name in urgent_flags:
+        urg["test"][name] = urgency_stats(test.clean_text, preds[name], test.urgent, urgent_flags[name])
+    if llm_ready(LARGE, holdout.clean_text)[0]:
+        hold = llm_results(LARGE, holdout.clean_text)
+        urg["holdout"]["gpt-oss-120b"] = urgency_stats(holdout.clean_text, [r["queue"] for r in hold],
+                                                       holdout.urgent, [r["urgent"] for r in hold])
 
     flat = pd.DataFrame(rows + ablation).drop(columns=["per_class_f1"])
     flat.to_csv(OUT / "eval_triage.csv", index=False)
@@ -143,16 +172,22 @@ def main():
     for name, p in preds.items():
         detail[name] = p
     detail.to_csv(OUT / "eval_predictions.csv", index=False)
+    failures(test, preds).to_csv(OUT / "eval_failures.csv", index=False)
+    pd.crosstab(test.label, pd.Series(preds["tfidf_logreg"], name="predicted")).to_csv(
+        OUT / "eval_confusion_tfidf.csv")
 
     numbers.save_section("triage", {
         "test_tickets": len(test), "dev_tickets": len(dev), "holdout_tickets": len(holdout),
         "label_counts_test": test.label.value_counts().to_dict(),
         "models": {r["model"]: r for r in rows},
         "few_shot_ablation_dev": {r["model"]: r for r in ablation},
+        "skipped": skipped,
         "urgency": urg,
     })
     print(flat.to_string())
     print(urg)
+    for name, why in skipped.items():
+        print(name, "->", why)
 
 
 if __name__ == "__main__":

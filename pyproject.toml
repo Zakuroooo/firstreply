@@ -2,6 +2,7 @@
 name = "firstreply"
 version = "0.1.0"
 requires-python = ">=3.11"
+description = "Support operations intelligence: ticket triage evals, SLA analytics and an ROI case."
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

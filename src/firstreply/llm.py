@@ -58,7 +58,7 @@ def _key(model, messages, extra):
     return hashlib.sha256(raw.encode()).hexdigest()[:24]
 
 
-def _api_key():
+def _api_key(required=True):
     key = os.environ.get("GROQ_API_KEY")
     if not key:
         env = db.ROOT / ".env"
@@ -66,9 +66,19 @@ def _api_key():
             for line in env.read_text().splitlines():
                 if line.startswith("GROQ_API_KEY="):
                     key = line.split("=", 1)[1].strip()
-    if not key:
+    if not key and required:
         raise RuntimeError("GROQ_API_KEY not set and result not in cache")
     return key
+
+
+def has_key():
+    return bool(_api_key(required=False))
+
+
+def is_cached(model, messages, json_mode=True, reasoning_effort="low", max_tokens=600):
+    """True if this exact call is already in the cache (same arguments as chat())."""
+    extra = {"json": json_mode, "effort": reasoning_effort, "max_tokens": max_tokens}
+    return _key(model, messages, extra) in _load_cache(model)
 
 
 def chat(model, messages, json_mode=True, reasoning_effort="low", max_tokens=600):
@@ -128,8 +138,10 @@ def parse(text):
     try:
         data = json.loads(text)
         queue = str(data.get("queue", "")).strip().lower()
-        urgent = bool(data.get("urgent", False))
-    except (json.JSONDecodeError, AttributeError):
+        urgent = data.get("urgent", False)
+        # a string "false" is truthy in Python, so read strings explicitly
+        urgent = urgent.strip().lower() == "true" if isinstance(urgent, str) else bool(urgent)
+    except (json.JSONDecodeError, AttributeError, TypeError):
         return "other", False, False
     if queue not in QUEUES:
         return "other", urgent, False

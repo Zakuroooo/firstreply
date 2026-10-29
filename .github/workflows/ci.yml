@@ -1,0 +1,55 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      reproduce:
+        description: "Download the data, rebuild every number (make all) and commit outputs/"
+        type: boolean
+        default: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+      - run: python -m py_compile app/queue_app.py
+
+  reproduce:
+    # Manual only: downloads ~540 MB. Runs the LLM rows too if the GROQ_API_KEY secret is set.
+    if: github.event_name == 'workflow_dispatch' && inputs.reproduce
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: raw
+          key: raw-twcs-bitext-v1
+      - run: make all
+      - run: python -m pytest -q
+      - name: Commit regenerated outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add outputs
+          git diff --cached --quiet || git commit -m "Regenerate outputs from raw data [skip ci]"
+          git push

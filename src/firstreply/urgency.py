@@ -16,12 +16,13 @@ P1_RULES = {
                             r"never (ordered|bought)|haven'?t (ordered|purchased)|taking (my )?(money|credits?)|"
                             r"money (out of|taken|disappear\w*|keeps disappearing)|deducted|charged twice|payment disappeared)",
     "locked_out": r"\b(locked( out)?|suspended|blocked access|cancel+ed my account|can'?t recover|account (was )?(closed|blocked))",
-    "safety_or_health": r"\b(made me (ill|sick)|food poisoning|allerg\w*|injur\w*|unsafe|dangerous|fire|smoke|"
+    "safety_or_health": r"\b(made me (ill|sick)|food poisoning|allerg\w*|injur\w*|unsafe|dangerous|fire(?!\s*(tv|stick|tablet|hd|\d))|smoke|"
                         r"plastic in|glass in|hospital)",
     "legal_threat": r"\b(lawyer|solicitor|sue|legal action|letter before action|trading standards|small claims)",
     "stuck_right_now": r"\b(bank(s)? (is |are )?about to close|waiting (at|by) the door|right now|stranded)",
 }
-_compiled = {name: re.compile(rx, re.IGNORECASE) for name, rx in P1_RULES.items()}
+# Each pattern starts with \b; the closing \b below stops "fire" matching "Firefox" or "sue" matching "suede".
+_compiled = {name: re.compile(rf"{rx}\b", re.IGNORECASE) for name, rx in P1_RULES.items()}
 _vader = SentimentIntensityAnalyzer()
 
 NON_ACTION_QUEUES = {"complaint_feedback", "other"}

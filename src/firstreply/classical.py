@@ -52,6 +52,16 @@ def predict_with_threshold(model, texts, threshold):
     return list(preds), proba.max(axis=1), ms
 
 
+def single_ticket_latency_ms(model, texts):
+    """Time each ticket on its own, the way a live queue would call the model (one ticket at a time)."""
+    out = []
+    for t in texts:
+        start = time.perf_counter()
+        model.predict_proba([t])
+        out.append((time.perf_counter() - start) * 1000)
+    return out
+
+
 def tune_threshold(model, dev_texts, dev_labels, metric):
     """Pick the threshold (0.0-0.95) that gives the best metric on the dev split."""
     best_t, best_score = 0.0, -1.0
