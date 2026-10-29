@@ -1,0 +1,16 @@
+model,eval_id,text,truth,predicted
+tfidf_logreg,101,Wasted food as @user delivery tonight due to go off tomorrow & Sat. 🙄 <url>,complaint_feedback,account
+tfidf_logreg,102,"Why #Alexa is showing results of Baran Florida while I am requesting info for #Bengaluru, Karnataka. #AmazonPrime #AmazonAlexa <url>",other,refund_return
+tfidf_logreg,103,made a order and cancelled it with PayPal Monday still haven’t been refunded ?,refund_return,order_change
+tfidf_logreg,104,I got my prepaid recharged with ₹399. My Airtel app shows it of validity 70 days but on recharge I got the SMS of validity 35days only. This is the best network you are providing....cheating with us in all possible way 😣😣,billing_payment,account
+tfidf_logreg,105,Makes me excited walking back from uni to see the Christmas lights starting to get put up at George Square🎅🎄,other,refund_return
+tfidf_logreg,107,"Hello PayPal, please kindly check my DM. I am having a problem for days and I really need your support! Thank you",talk_to_human,other
+tfidf_logreg,108,"Customer service is a joke! What's the point of pre ordering to wait until a week after release to receive the item! Hasn't even been dispatched yet and release was yesterday! CS just reiterate estimated delivery, no help at all.",delivery,talk_to_human
+tfidf_logreg,110,"gutted, got this Berry selection, which is usually my favourite but my gosh, everything in this selection is sour! #fail #help <url>",complaint_feedback,refund_return
+tfidf_logreg,112,Your driver tried to deliver my @user package ONCE. Now I’m expected to drive and pick it up from some other place? Fuck that. I paid for #AmazonPrime and shipping. Deliver it to MY place. 🖕🏻🤯🤬😡😠🖕🏻 <url>,delivery,account
+tfidf_logreg,113,Amazonさん仕事早いわ〜 マウスパットでかくていい感じ！ <url>,complaint_feedback,other
+tfidf_logreg,114,ur dlvry guy askng me 2 pick the ordr up frm bus stn or cncl it @user let me know if u hav smlr prdct <url>,delivery,account
+tfidf_logreg,116,I have just got home from my shop and noticed one item out of date on 20/10 brought today what do I do?,refund_return,order_change
+tfidf_logreg,118,have not delivered me my product and their customer service dropping my call and head office has no contact number.#UPSBADSERVICE,delivery,talk_to_human
+tfidf_logreg,120,That @user sold notification sound 😍,complaint_feedback,account
+tfidf_logreg,121,"Te amo @user, por ahorrarme ir a las plazas a comprar los regalos de navidad.",complaint_feedback,account

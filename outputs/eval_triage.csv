@@ -1,0 +1,2 @@
+model,n,accuracy_pct,accuracy_ci95,macro_f1_pct,macro_f1_ci95,cost_per_1000_usd,latency_p50_ms,latency_p95_ms,bitext_in_domain_accuracy_pct,bitext_train_rows,other_threshold,accuracy_without_threshold_pct
+tfidf_logreg,300,20.0,"[15.7, 24.7]",20.0,"[15.1, 24.8]",0.0,0.7,0.8,99.9,20698,0.35,16.3

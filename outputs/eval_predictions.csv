@@ -1,0 +1,301 @@
+eval_id,brand,clean_text,label,urgent,tfidf_logreg
+101,sainsburys,Wasted food as @user delivery tonight due to go off tomorrow & Sat. 🙄 <url>,complaint_feedback,False,account
+102,AmazonHelp,"Why #Alexa is showing results of Baran Florida while I am requesting info for #Bengaluru, Karnataka. #AmazonPrime #AmazonAlexa <url>",other,False,refund_return
+103,ArgosHelpers,made a order and cancelled it with PayPal Monday still haven’t been refunded ?,refund_return,False,order_change
+104,airtel_care,I got my prepaid recharged with ₹399. My Airtel app shows it of validity 70 days but on recharge I got the SMS of validity 35days only. This is the best network you are providing....cheating with us in all possible way 😣😣,billing_payment,False,account
+105,ArgosHelpers,Makes me excited walking back from uni to see the Christmas lights starting to get put up at George Square🎅🎄,other,False,refund_return
+106,SpotifyCares,shuffle is broken. on playlists the app will play 10-20 songs off the same two albums if possible then switches to two other albums. doesn’t feel random at all when a large playlist with dozens of albums only shuffles through 2 at a time.,other,False,other
+107,AskPayPal,"Hello PayPal, please kindly check my DM. I am having a problem for days and I really need your support! Thank you",talk_to_human,False,other
+108,AmazonHelp,"Customer service is a joke! What's the point of pre ordering to wait until a week after release to receive the item! Hasn't even been dispatched yet and release was yesterday! CS just reiterate estimated delivery, no help at all.",delivery,False,talk_to_human
+109,SpotifyCares,how do I get my account to family pack please. Settings don’t show any upgrade options. Thank you 🙏🏾,account,False,account
+110,Tesco,"gutted, got this Berry selection, which is usually my favourite but my gosh, everything in this selection is sour! #fail #help <url>",complaint_feedback,False,refund_return
+111,UPSHelp,"2 days in a row you have failed delivery cause I ""wasn't present"". I have been home all day. where is my package and refund.",delivery,False,delivery
+112,AmazonHelp,Your driver tried to deliver my @user package ONCE. Now I’m expected to drive and pick it up from some other place? Fuck that. I paid for #AmazonPrime and shipping. Deliver it to MY place. 🖕🏻🤯🤬😡😠🖕🏻 <url>,delivery,False,account
+113,AmazonHelp,Amazonさん仕事早いわ〜 マウスパットでかくていい感じ！ <url>,complaint_feedback,False,other
+114,AmazonHelp,ur dlvry guy askng me 2 pick the ordr up frm bus stn or cncl it @user let me know if u hav smlr prdct <url>,delivery,False,account
+115,AmazonHelp,"I reschedules delivery of my 4 orders and repeatedly contacted customer care, but none of these got rescheduled inspite of confirmation from customer care. This is annoying. There is still one order that I have rescheduled, but the same shows the original date only.",delivery,False,delivery
+116,Tesco,I have just got home from my shop and noticed one item out of date on 20/10 brought today what do I do?,refund_return,False,order_change
+117,AskTarget,OMFG @user! Using the Target app to redeem cartwheel deals for MONTHS but now it's an endless sign-in loop! Get your shit together!,account,False,account
+118,UPSHelp,have not delivered me my product and their customer service dropping my call and head office has no contact number.#UPSBADSERVICE,delivery,False,talk_to_human
+119,AskTarget,is there a link for the Benny’s Burgers mug from the new Stranger Things line?,other,False,other
+120,AskeBay,That @user sold notification sound 😍,complaint_feedback,False,account
+121,AmazonHelp,"Te amo @user, por ahorrarme ir a las plazas a comprar los regalos de navidad.",complaint_feedback,False,account
+122,UPSHelp,"OK @user. One, I can understand, but this is the 2nd box in a row to show up like this. <url>",refund_return,False,account
+123,ArgosHelpers,"Hi, I have sent you a couple DM’s which have gone unanswered, would someone please get back to me...",talk_to_human,False,talk_to_human
+124,SpotifyCares,"Hi! I would like to cancel my premium account but just found out that I got charged today. If I cancel the premium service now, will I still be able to use it for a month since it’s already paid? Please advise thank you!",account,False,account
+125,UPSHelp,No updates in 3 days in a system that is all about tracking is pretty poor. #UPSLateDelivery,delivery,False,refund_return
+126,AmazonHelp,"Tracking says my keyboard is out for delivery, but my book from Amazon arrived this morning instead. Eh? What gives?",delivery,False,delivery
+127,Morrisons,just bought these from morrisons in Eccles. HOW CAN SOMETHING BE 6 DAYS OUT OF DATE? I won’t be happy if I get sick. <url>,complaint_feedback,False,refund_return
+128,airtel_care,"Did a sim swap over 2 days ago, the line is still not active. I don taya for una 😧😧 @user",account,False,account
+129,AskTarget,Hey @user your Columbus East location in Ohio is fantastic. Special shout out to Adrianne. Great management great store.,complaint_feedback,False,account
+130,AmazonHelp,I started a free trial of prime last night and want to cancel it but there is no option for this says it will ‘be active soon’,account,False,order_change
+131,airtel_care,The affected number is 09020748642,other,False,delivery
+132,ArgosHelpers,I paid for a Wonder Woman outfit for my granddaughter 2 days ago and still haven't received the email to enable me to collect it. What's going on😡,delivery,False,account
+133,AskTarget,Hey @user your Garden City Ks store is selling expired Ripple Milk.,complaint_feedback,False,account
+134,AmazonHelp,"hi, can you tell me how your eligibility works for getting free £6 for spending £30 on gift cards- I didn’t get it & spent £30.",billing_payment,False,refund_return
+135,AskPayPal,"Pissed at @user PAD is coming out early. All they do is say ""we appreciate you told us you didn't get notification"" & won't fix #BS",billing_payment,False,other
+136,AskeBay,"I can´t pay with my eBay gift card it says ""You can't use a gift card or eBay Bucks to buy an eBay gift card."" Im trying to buy clothes",billing_payment,False,order_change
+137,sainsburys,Thank you @user driver who phoned to ask if I wanted shopping early and was here in 5 minutes. Very pleasant and chatty too.,complaint_feedback,False,refund_return
+138,AskPayPal,Hey @user Remember me? Yes or Maybe Later. What about never? I never want things remembered.,other,False,account
+139,Tesco,since when do you charge 50p for air at your petrol stations? You’ve just lost my business over something so trivial and petty.,complaint_feedback,False,other
+140,AmazonHelp,How can I pass on a compliment about a member of your staff? @user @user 🤗,complaint_feedback,False,account
+141,UPSHelp,It looks like @user #store3897 doesn’t know the difference between vinyl vs. fabric printing #sigh #Google,complaint_feedback,False,account
+142,AmazonHelp,I order something for the first time on @user w prime and of course it's NOT delivered in 2 days. Go figure.. 🙄😠,delivery,False,account
+143,AmazonHelp,Totally let down by my @user order (3rd party) Why offer next day replacement then not reply or deliver? #refund #halloween #whatnow?,refund_return,False,account
+144,AskeBay,For some reason I had a good week on @user sold 5 items this week and 4 last week. This wardrobe declutter is going well... 😆🖒 wonder how this week will go,other,False,account
+145,airtel_care,mellaga @user @user @user ki gudbye cheppestana. 10yrs bandham mugusipothondi. worst customer care,complaint_feedback,False,account
+146,UPSHelp,This is how you treat something marked fragile @user @user ? <url>,refund_return,False,account
+147,SpotifyCares,hello yes i’d like to know why you’re taking money out of my account when i don’t even have any premium set up,billing_payment,True,account
+148,AskTarget,"I swear i can’t buy @user clothes without buying them six sizes too big, one wash and dry per car instructions and here were are with an extra small. Ps. I’m not an extra small.",complaint_feedback,False,order_change
+149,Tesco,"Connors taking me to Cardiff Christmas Market tonight and i’m so excited, actually the best thing about Winter",other,False,account
+150,Morrisons,can you tell me where these eggs are from and how you can tell- the 2 flags on packing are confusing #scotlandthebrand <url>,other,False,other
+151,ArgosHelpers,Terrible delivery service even worse paying extra for a time slot #3hourslate,delivery,False,delivery
+152,airtel_care,plz I did subscription of #300 for 1gb ... only work the day I did d sub ... my no is 09027064862,other,False,account
+153,AskPayPal,tengo una duda con un caso no entiendo bien haber si me pueden aclarar que es lo que paso,talk_to_human,False,other
+154,ArgosHelpers,any idea when back in stock? Been saying “coming soon” for aaaaages?!?! Pretty please?? X <url>,other,False,refund_return
+155,sainsburys,is this right ?! It wasn’t a return but an exchange and seems extremely tight of you :(,refund_return,False,other
+156,Tesco,what is wrong with your groceries site? Been trying to complete my order for half an hour - get it fixed please!😞,order_change,False,order_change
+157,ArgosHelpers,Thanks @user 👍 <url>,complaint_feedback,False,account
+158,airtel_care,<url>,other,False,other
+159,ArgosHelpers,Sickkkkkk to death of Argos now!!! Bloody useless!!!!!,complaint_feedback,False,account
+160,Tesco,Just tried to book IFly with Clubcard vouchers. Only can book aft 6:30 pm and not for whole family. No mention in small print.,other,False,talk_to_human
+161,AskPayPal,Excuse me @user but I'd like to know why on earth you've cancelled my account giving me no reason,account,True,account
+162,SpotifyCares,please bring back “Driving home for Christmas” by Chris Rea. Thanksssss,complaint_feedback,False,refund_return
+163,sainsburys,Is your online payment system down for Tu clothing?@user,billing_payment,False,billing_payment
+164,ArgosHelpers,I have contacted them on eBay but I need this sorted. Advice??? Very poor from a big company!! 2.,talk_to_human,False,other
+165,sainsburys,I need your help I forgot to swipe my parking voucher as I left Hinckley this morning. Ive tried calling the store but its busy <url>,other,False,other
+166,airtel_care,I wonder what is happening to your internet connection these days..so poor. U need to #improve,other,False,talk_to_human
+167,AskeBay,"set up my 1st account with u 2 buy my gf a Funko Pop & Cosplay stuff & as I go to pay this happens, why? I just want 2 give u $ <url>",billing_payment,False,account
+168,AskeBay,what is the best way to contact regarding feedback?,talk_to_human,False,talk_to_human
+169,AskTarget,"TY @user of Southington, CT for LYING to me & telling me u had NONE of these in stock! I drive 20+ miles & get 3 off the shelf! <url>",complaint_feedback,False,account
+170,airtel_care,meanwhile I have Airtel data but unable to browse. Pls intervene pls.,other,False,account
+171,AmazonHelp,absolutely disgusted with your service. Customer service takes back seat in India as usual.yall have managed breach of terms,complaint_feedback,False,talk_to_human
+172,SpotifyCares,Dear @user i need this song ASAP!!! One More Chance by Super Junior #OneMoreChance,complaint_feedback,False,account
+173,SpotifyCares,Can't update my payment information! It's your website function that doesn't work. Please fix it!,billing_payment,False,billing_payment
+174,AskPayPal,"Huh, @user just added about 10 clicks to withdraw your funds into your bank account. Anyone really love an alternative you've used a lot?",complaint_feedback,False,account
+175,airtel_care,I get this message everyday urging me to borrow airtime and it has become a become a nuisance to me @user 09078458521 <url>,complaint_feedback,False,account
+176,AmazonHelp,"Amit Agarwal, Manish Tiwary @user : Yr philosophy ""Anything a customer can think of,he or she should be able to find it on Amazon""reminds me of the Changi airport philosophy. Anything a transit passenger can think of,they have already thought of! ..1/2",other,False,account
+177,Morrisons,Massive thanks to @user - bread donation for our breakfast club 8 - 8.30am every morning. It's free for all. <url>,complaint_feedback,False,account
+178,AskeBay,why did you have call me back just to put be on hold?,talk_to_human,False,other
+179,UPSHelp,I hate you,complaint_feedback,False,other
+180,marksandspencer,"the caramelised onion and goats cheese roll, as found in the Festive Trio, is sublime!! Any chance of a full size version? 😊",complaint_feedback,False,refund_return
+181,AmazonHelp,そうだ！Amazonのギフトなんちゃらのやつ！あれはコンビニ支払い出来るか調べるんじゃ！,other,False,other
+182,Tesco,Not having much luck with correct orders from shops. 1st Asda and now @user. Apparently it’s too much trouble to get it right 1st time 🤦‍♀️,complaint_feedback,False,account
+183,ArgosHelpers,I've orderd an item at £20 & will take 3 days to be in store. Item is now £36.99. Will Argos honour price when ordered?,billing_payment,False,order_change
+184,airtel_care,"good morning, kindly send the night plan for data 08125370022",account,False,account
+185,Morrisons,"been trying to find Vindaloo curry in Aylesbury store all week, will it be back in stock soon?",other,False,refund_return
+186,AmazonHelp,"Le livreur amazon qui me donne un colis qui n'est pas pour moi (mais qui est pour le voisin chez qui je mange ce soir, ça tombe nickel) (mais il s'en est rendu compte 5min après)",delivery,False,other
+187,AmazonHelp,I want my prime membership refunded and the money I wasted on those #zigzags #swishers refunded ASAP @user fuck that,refund_return,False,account
+188,AmazonHelp,"Help- just called support cause of the price changing when trying to buy this stroller. Took multiple screenshots of the list price of $395.99. While on the phone, they changed the website price and would not help us what so ever. Would you not honor it? Thanks! <url>",billing_payment,False,order_change
+189,AskTarget,Stranger Things BR out of stock already or is that a mistake?,other,False,other
+190,Tesco,"if you advertise 24 profiteroles, there needs to be 24! How do you divide 23 by 3? Especially after paying £5 for the 'privilege'! <url>",complaint_feedback,False,refund_return
+191,AmazonHelp,Hey @user I've been trying for a week now to report that an item never showed up at my house to 0 response. Wtf?,delivery,False,account
+192,AskPayPal,fix your damn servers so I can add my bank account details...,billing_payment,False,account
+193,Tesco,Love the new look @user website! So much easier to navigate and find everything I need to buy every week.,complaint_feedback,False,order_change
+194,marksandspencer,do you know if your Vanguard store has had a delivery of Nouveau Beaujoulais yet? (assuming M&S are doing that again this year?),other,False,other
+195,SpotifyCares,why yall remove that new nba youngboy ..stop playing before i switch back to apple music,complaint_feedback,False,account
+196,AskPayPal,"changed my delivery address when I was paying, now my order is being sent to the wrong place!",order_change,False,order_change
+197,AskeBay,$500 Visa Card - No Fees - Free Priority 2-3 Day Shipping $619.95 Buy It Now 112625870467 22 visa 1 seller,other,False,order_change
+198,AskeBay,What is the point of putting ‘no returns accepted’ on a listing @user? I have been backed into a corner & issue a refund because the buyer didn’t read the item description properly. No ‘Seller Protection’ against time wasting buyers #eBay,complaint_feedback,False,account
+199,AmazonHelp,"Rebonjour , j'avais fait ce que vous m'aviez dit et ils me disent qu'il sont besoin d'un relever bancaire ou confirmation...",other,False,other
+200,Tesco,your Stairfoot- Barnsley store is seriously failing in CService. Actually witnessed a lady being accosted by a staff member yesterday evening. #rude #employpplwhowanttobethere,complaint_feedback,False,other
+201,UPSHelp,is trying to RUIN my entire birthday weekend. I will never use them again @user @user,complaint_feedback,False,account
+202,marksandspencer,customer service was non existent today... still not sorted left after waiting 20 minutes not good,complaint_feedback,False,talk_to_human
+203,AskTarget,.@user could you start carrying 35x30 jeans? I'm not ready to commit down 2 sizes to 34x30. #humblebrag #bragbrag #stillbuyingtheseblind,complaint_feedback,False,account
+204,AskPayPal,"Had a payment disappear. I called customer support but automated system crashed due to ""technical difficulties"". Plz advise!",billing_payment,True,talk_to_human
+205,AskPayPal,"I've got an incoming payment that is showing as 'pending - on hold' for over 2 days, why is that?",billing_payment,False,billing_payment
+206,AmazonHelp,Your store is broken. I keep trying to check out with @user and it loads @user instead.,other,False,account
+207,sainsburys,"after weeks of complaining, ""finally"" had efficient, sincere customer service. LEANNE (not sure where) is a credit to Sainsburys",complaint_feedback,False,talk_to_human
+208,SpotifyCares,my husband has a premium account with you but we can have it via our phone contract Vodafone can we switch our account please?,account,False,account
+209,UPSHelp,"Hello. Tracking indicated that my package was out for delivery this morning at 9:33 am. It is now 9:07 am. Does UPS normally deliver on Saturdays, or is it possible that the package was incorrectly scanned?",delivery,False,delivery
+210,AskTarget,What reason do you have for not including Lucas from Stranger Things in your POP! toys. He is one of the main characters.,complaint_feedback,False,refund_return
+211,AskTarget,your electronic process is horrible,complaint_feedback,False,complaint_feedback
+212,UPSHelp,can one of u do something about lifting restrictions for an order to pick up at UPS? Called both neither would help,delivery,False,order_change
+213,AmazonHelp,"please help, constantly having your local delivery agent make up delivery attempts to my work address for orders. £1 credit does not solve my problem of constantly having orders delivered late & your delivery agent lying about delivery attempts.",delivery,False,order_change
+214,AskTarget,I pre-ordered Cars 3 Bluray only to see it on sale the day it's released. Why even preorder? I paid more & it's arriving next wk.,complaint_feedback,False,refund_return
+215,AmazonHelp,J'ai un soucis avec le Amazon locker de #LyonConfluence,delivery,False,other
+216,UPSHelp,My package has been in China since the 29th and its suppose to be here in the USA by the 3rd? What’s going on???,delivery,False,refund_return
+217,marksandspencer,"hi, I've bought some shoes this morning but the 20% wasn't deducted. Please can you help? Thanks.",billing_payment,False,order_change
+218,AmazonHelp,"6 days for 2 months,44 phone calls, 0 action taken,10 orders given, yes i trust amazon But when will i get my refund ???",refund_return,False,refund_return
+219,AskeBay,Richiamo l’attenzione dello staff ebay Sono Ylber Maliqi e ho aperto un contenzioso di rimborso per un prodotto che non,refund_return,False,other
+220,AmazonHelp,Release Day war 7.11. Bestellt hatte ich schon im JUNI. Läuft gerade bei @user 🙄 <url>,delivery,False,account
+221,AmazonHelp,"Hi @user, how do you manage your deliveries in countries like USA or Canada where things like #Aadhaar don't exist? Pls stop fooling people.",other,False,account
+222,sainsburys,"Hi @user, my local store (<url> has a distinct lack of veggie food. It's only a small shop, but it's in a big student area (lots of students r veggies/vegans). Also, I asked last year 4 vegan cheese 2 b sold, but no luck so far. Anything u can do? Ta. :)",complaint_feedback,False,account
+223,Morrisons,"Sooooooo, for the last two years running , you guys have done some real bargain lamb for Black Friday . Please tell me you’ll be doing it again <url>",other,False,order_change
+224,UPSHelp,throw the whole company away. <url>,complaint_feedback,False,other
+225,AskTarget,"I guessit is the business model at @user to not make things right, when your online orders get completely messed up, and everyone refuses to help, after taking your money.",complaint_feedback,False,refund_return
+226,AmazonHelp,Please see this.. This happened yesterday in Chennai. We spending our money and there is no safe delivery. How careless they are. <url>,delivery,False,refund_return
+227,AskeBay,is there a way to switch a buy it now listing to an auction?,other,False,order_change
+228,SpotifyCares,Thanks @user for randomly undownloading all my albums!!! You da real mvp,other,False,account
+229,AmazonHelp,bon weekend à vous aussi. <url>,other,False,other
+230,AmazonHelp,"there was an item missing from my package, and you're making me wait 72 hours to for it to be 'investigated'. This is unacceptable.",refund_return,False,order_change
+231,AskTarget,I need @user to be 24hrs,complaint_feedback,False,account
+232,airtel_care,you people have been taking my credits jus for trying to transfer airtime. You charge me for sms and airtime not transferred,billing_payment,True,refund_return
+233,AmazonHelp,Assassins Creed kommt heute mit @user Logistics...Bitte kommt dieses EINE mal pünktlich und gebt das Paket bei MIR ab nicht woanders!! <url>,delivery,False,account
+234,marksandspencer,could you advise when sage & pinion Stuffing is in store thanks,other,False,delivery
+235,AmazonHelp,I either have terrible neighbour's (crazy neighbour goes w/o saying) or the Amazon courier hates me ☹️,delivery,False,other
+236,AskPayPal,Hi there. I just had money stolen from my acct by someone who hacked in and pretended to be me.,account,True,refund_return
+237,SpotifyCares,"""This song is not available. If you have the file on your computer you can import it."" Is the message I get on EVERY song.",other,False,refund_return
+238,Tesco,Look what I found in my grapes @user 😷😷😷😷😷 <url>,complaint_feedback,False,account
+239,marksandspencer,Christmas adverts are always my favourite. They didn’t disappoint this year 😍😩🐻💙 <url>,complaint_feedback,False,refund_return
+240,ArgosHelpers,what is the point of being able to choose a delivery time slot if you don’t turn up?! WHERE IS MY ORDER?,delivery,False,delivery
+241,AmazonHelp,Okay why did Amazon Prime take money out of my bank account and I don’t even have a membership with them?!,billing_payment,True,account
+242,ArgosHelpers,"the 10 % codes stopped early, 😡 <url>",complaint_feedback,False,refund_return
+243,sainsburys,"Love the new @user tv advert with everyone texting. Representation of every shopper, and funny. #ExcellentMarketing",complaint_feedback,False,account
+244,Tesco,bought these beers from store in Hull last night and realised they are out of date. We all didn't notice until a few had been drunk! <url>,complaint_feedback,False,other
+245,SpotifyCares,you want to explain why the fuck The Great Gatsby soundtrack ain’t on ya app??,complaint_feedback,False,account
+246,UPSHelp,"Thanks for not even bothering to check if I was home today @user (I was) and instead, forcing me to go to the trouble of driving to your remote pick up point. #UPSFail",delivery,False,account
+247,airtel_care,You guys @user turned off my internet for no reason when I needed it the most. Then proceeded to block my calls?,other,False,account
+248,ArgosHelpers,Hate this weather ☔️. Wish it would be either sun ☀️🌴 or snow 🌨☃️,other,False,other
+249,AskTarget,Will the Crota Funko pops make it online or are they in store only? The pops from the stock room had already been rummaged through,other,False,billing_payment
+250,AmazonHelp,How do we get notified regarding the quiz?,other,False,billing_payment
+251,AskTarget,where would the reputation shirts be located at and what are the targets that have the shirts already,other,False,refund_return
+252,Morrisons,awful experience from your bradford warehouse manager. Asked for cctv footage after one of your vans caused damage to my car and got a I don't care attitude!,complaint_feedback,False,other
+253,UPSHelp,"you're 2 for 2 with sending me emails saying ""you have a package coming tomorrow."" Only to awaken to an email saying ""We previously sent you a delivery alert for the package(s) shown below. This package(s) will not be delivered as originally scheduled""? #dissapointed #wtf?!?",delivery,False,delivery
+254,ArgosHelpers,"ordered items for same day delivery between 14:00 and 18:00, 22:30 and still nothing, phoned customer services twice to try and amend the delivery address as I made a mistake booking but apparently they don’t have a number for the driver? What is going on?",order_change,False,order_change
+255,AmazonHelp,ordered on Wednesday (Prime) and still not here! Where's my parcel 😫 <url>,delivery,False,account
+256,AmazonHelp,"just had an email saying my Now delivery was refused at 21:01, but your driver never attempted delivery! 😡",delivery,False,order_change
+257,UPSHelp,"been waiting for a check delivery, been out for delivery all day, banks about to close and still no goddamn delivery. I'm upset.",delivery,True,delivery
+258,AmazonHelp,So I order a AMD processor from you and the box is right but the wrong processor was in the box.,refund_return,False,order_change
+259,SpotifyCares,.@user Thank you for the follow. How can I submit my song SENORITA for review for your wonderful playlists? Thank you!,other,False,complaint_feedback
+260,AskeBay,Same here. I can't even get worldwide visibility any more ( another glitch) so my international sales non existant CS will email me about it,other,False,other
+261,Tesco,use by 27th - which is today but it's gone completely brown! I don't have a receipt but I can't cook it now! <url>,refund_return,False,account
+262,AskeBay,"hey, I forgot, do I have to update my contact info or do I have to give my address to the seller?",account,False,order_change
+263,Tesco,your sizing guide link on a kids hat page takes to irrelevant men’s sizing guide. How choose size please? <url>,other,False,other
+264,AskPayPal,I am in Uruguay and I cant recover my password!! I am desperate!! And lost!! Please help me,account,True,account
+265,marksandspencer,Danielle in the cafe at Telford needs a gold medal! Working so hard. Seems to be doing all the front of house work her self. Not one person offered her assistance. Shes a grade A worker and I hope it will get recognised.,complaint_feedback,False,other
+266,airtel_care,"i had 634mb so i got maself anoda 500mb, was expecting u add it up! but u neva did! pls return ma 500 dnt want the mb again!",refund_return,False,account
+267,AskTarget,Psssst @user I think you forgot to delete the 1st half of your subject line... If you need help in the copywriting department I got you. <url>,complaint_feedback,False,account
+268,AmazonHelp,"Now I may be missing something, but I know for sure that 15% of $699 is not $15. <url>",billing_payment,False,order_change
+269,Morrisons,Omelettes at Market Street Cafe Reigate - very tasty indeed. Happy belly.,complaint_feedback,False,other
+270,Tesco,why is it an order i tried placing at 22:50 has only given me single discount? Double discount was until 11pm??,billing_payment,False,order_change
+271,airtel_care,I bought airtime using a mobile app and have not been credited with it. can you look into my case for me please ?,billing_payment,False,account
+272,AmazonHelp,where is Outlander s3 ep6??? Meant to be up this morning on prime?,other,False,account
+273,sainsburys,how did this one pass your QC checks?!?! <url>,complaint_feedback,False,account
+274,sainsburys,Hi @user just some feedback on a product we bought at the weekend- a significant number of goujons seemed to be more air than chicken🤔 <url>,complaint_feedback,False,account
+275,AmazonHelp,There's no option of changing the Registered Mobile Number in your App. Need to change the number urgently. Pl help.,account,False,order_change
+276,sainsburys,40min wait for a bowl of soup @user arnison. Hope its homemade,complaint_feedback,False,account
+277,AskeBay,"hate the update. Don't want the ""recommendations"" on pricing or postage and no way to turn this feature off. Awful.",complaint_feedback,False,account
+278,ArgosHelpers,Hi I need to return an item today unfortunately I only have a e-mail receipt & no printer?Do I just show the e-mail in store?,refund_return,False,order_change
+279,AmazonHelp,Ordered a package for a 1day delivery from @user but it's gonna take two days to send it....,delivery,False,delivery
+280,AmazonHelp,it says it has been delivered..but i have nothing at my house. I didnt get a sign on my door for attempted delivery either <url>,delivery,False,account
+281,AmazonHelp,i ordered a recliner over a month ago and they keep pushing the date 🙃 they've messaged me to review it but I DONT HAVE IT,delivery,False,other
+282,SpotifyCares,"Hi, I have been charged £9.99 a month for the last month. Previously I have paid £4.99 as I was and still am a full time student. Please can you help resolve this incorrect charge and prevent its occurrence in the future? Thanks!",billing_payment,False,refund_return
+283,UPSHelp,"hey @user, make sure y’all ring the doorbell today.",delivery,False,account
+284,ArgosHelpers,hey there do you accept Love2Shop vouchers in store?,billing_payment,False,other
+285,AskPayPal,"Hi Paypal, i'm still waiting for you. i need to withdraw my avaiable funds, but system is full of error and i can't complete this. Please help thanks.",billing_payment,False,refund_return
+286,airtel_care,please help your customer b4 he get tired of your problem!!! I can't log in facebook with my data. Thanks...,other,False,account
+287,Morrisons,"Couldn’t resist these today,on offer in @user might use plum one to soak fruit in for crimbo cake👌🏻👍🏻 <url>",complaint_feedback,False,account
+288,Morrisons,Awesome Topped Sushi Salad...but where is the dressing??? The other one I bought had some on it. 😭 <url>,complaint_feedback,False,account
+289,AskeBay,"eBay site not working. Fire Wenig. Sales just stopped. No emails, feedback,bids...fix it!",other,False,complaint_feedback
+290,marksandspencer,Day 3 #AdventCalendar #beauty #skincare #huileprodigieuse @user @user #beautycalendar <url>,other,False,account
+291,Tesco,saw this in Southend Extra for £29 but out of stock only display but says £39 online?!? <url>,billing_payment,False,refund_return
+292,AmazonHelp,"placed order 4 Redmi 4 (Black, 64GB) on 7Oct & 10 Oct received status dat item was handed directly 2 cstmr Barun Ghatak my father",delivery,False,other
+293,AskTarget,umm why is it when I want something it isn’t available in any nearby stores nor can it be shipped??? you scrooge,complaint_feedback,False,order_change
+294,AskeBay,Your 'Global Shipping update' emails need an overhaul or scrapping: they invariably give the wrong (and conflicting) info. (ctd)-,complaint_feedback,False,order_change
+295,ArgosHelpers,Argos be trying to rip me off not letting me transfer my reservation because of their out of stock issues. So dissatisfied with the lack of real help.,order_change,False,account
+296,AskeBay,is there a way to link one of my auctions to a @user fundraiser page? #GoFundMe #eBay,other,False,account
+297,AskeBay,", I love you. Just thought you should know that. ❤️",complaint_feedback,False,other
+298,AskPayPal,Il n'y a que à moi à qui ça pose problème de ne pas pouvoir gérer manuellement les ≠ adresses de livraison utilisées pour @user? <url>,account,False,account
+299,sainsburys,So...my #Sainsburys home del just rolled up. I can live without any S&V crisps but no #Fruit&Nut bar! Are u freakin kidding me 😡😡😡 #Shopping,refund_return,False,order_change
+300,airtel_care,Dear @user pls deactivate from this number 08080213358 I did subscribe to this service. Happy Sunday. <url>,account,False,account
+301,AskeBay,I sincerely hope ebay will resolve this matter.As I believe ebay is a principled company. @user <url>,other,False,account
+302,AskTarget,this and the “Boo!” sign: can you make a “Ho Ho Ho” flickering or other classic #Christmas one? <url>,complaint_feedback,False,account
+303,UPSHelp,"if a package is next day air saver, shouldn't they at least ring my doorbell? Days left at front door. What does REL 04F mean?",delivery,False,delivery
+304,AskPayPal,hi paypal. Ive been trying to resolve something since yesterday I havent been able to do anything. please help!,talk_to_human,False,order_change
+305,Tesco,"(forgot to post yesterday) bought these, opened them to put in vase, and LOOK! NOT HAPPY! All went in the bin. What can you do? <url>",refund_return,False,other
+306,AskPayPal,"buenos días espero me puedan ayudar tengo Tipo de Transacción: Pago enviado - Pendiente, pero aún tengo el dinero en #Paypal <url>",billing_payment,False,other
+307,AmazonHelp,one order false attempt for delivery. Second order no delivery while the app says delivered. What’s up with the horrible service?,delivery,False,delivery
+308,Morrisons,why do your doughnuts taste like undercooked bread with Betty lemsip in the middle?,complaint_feedback,False,other
+309,AmazonHelp,"absolutely shocking service, lost the main present and the courier has made up a name and address! Never dealing with you again, can’t even sort the issue out when we phone up!",delivery,False,account
+310,AmazonHelp,.@user I bought a redmi phone. I want it's bill on my mail id. Could you pls send me the bill? @user,billing_payment,False,account
+311,sainsburys,"just bought this, opened it then realised almost 5 months out of date! #flat#nofizz <url>",complaint_feedback,False,account
+312,UPSHelp,"Ok so, Mistakes happen, but after hours of multiple phone calls they won’t even guarantee that they will cover international shipping to ship these supplies to Puerto Rico where I’m supposed to be taking them. Oh and yes, it was GUARANTEED to be here by today. @user #neverUPS",delivery,False,other
+313,marksandspencer,Hi @user I’ve been trying to order flowers since last night (on the app and via website) but my message to recipient won’t save. Getting irritating now... Please help!,order_change,False,account
+314,UPSHelp,"Delays in Baltimore, MD today?",delivery,False,refund_return
+315,AmazonHelp,muy bien Amazon Prime :D,complaint_feedback,False,other
+316,UPSHelp,"Y'all need to drop @user. Pkg shipped 3-day select on 11/19, still isn't here & delivery has been rescheduled THREE TIMES for no reason. 3 days in a row tracking says ""out for delivery"" only to no-show & be rescheduled. Their crappy shipping is damaging your brand.",delivery,False,delivery
+317,Tesco,loving the idea of opening your car parking space at St.Oswalds Gloucester. Shame it’s so dirty and full of litter! Not a good impression for visitors. Photos don’t show half of it ! Leaves & allsorts in what was public toilets 😔 <url>,complaint_feedback,False,refund_return
+318,AskPayPal,reply to my DM please,talk_to_human,False,account
+319,AskPayPal,"18 (eighteen) times in the past week I’ve logged on to my @user account to remedy their system failing to accept a simple reality, me living in Sweden, still Danish primary bank. Now, as we’re I a criminal, blocked access to my own money.",account,True,account
+320,ArgosHelpers,Hi. Got an e-receipt from you but I haven’t purchased anything?,account,True,other
+321,marksandspencer,I seriously can't get over the new @user christmas advert. I know John Lewis are famous for fantastic adverts but I'm not sure they will be able to beat M & S this year!,complaint_feedback,False,refund_return
+322,ArgosHelpers,Excellent customer service again yesterday and today at your Portishead store 874. #CustomerService 🙂,complaint_feedback,False,talk_to_human
+323,AmazonHelp,"little bit confused to what’s going on with my order, as it’s says you have recieved it on 20th Nov however it’s not been dispatched yet but I can order it again and have it delivered tomorrow? What’s going on??",delivery,False,account
+324,Tesco,why do you sell active F and F Shizzle for the birds but not the blokes hmm?,complaint_feedback,False,other
+325,AmazonHelp,Why do u guys differentiate between customers as prime and non prime when you guys are capable of delivering goods faster to all customers?,complaint_feedback,False,other
+326,AskeBay,just scrubbed my feedback for a very negative purchase experience. Maybe buying expensive stuff on @user is still a dumb idea! #WhoKnew!,complaint_feedback,False,complaint_feedback
+327,airtel_care,It's like @user and @user have formed a tag team to make me angry today. God pass una!!,complaint_feedback,False,account
+328,ArgosHelpers,on your advert the woman from T4 said prices for Black Friday offers will not change over the 2 week period? I bought an Xbox one for £199 and now it’s gone down to £169. Is she lying or have I misunderstood?#BlackFriday2017,billing_payment,False,delivery
+329,AmazonHelp,"406-1169269-9269922, premium delivery, delivery guy phone switched off, twice escalated, assured later refused, asked to raise complain refused, Fake Promises!",delivery,False,delivery
+330,AmazonHelp,"needs to check their chat representatives! ""Trupti""was HORRIBLEand held me hostage in the chat so I couldn't call or email. AWFUL!!",complaint_feedback,False,talk_to_human
+331,AskPayPal,", caused a 14 city tour to be cancelled. Many of us paid hundreds of $$ & haven't been refunded. Please help <url>",refund_return,False,refund_return
+332,airtel_care,waiting for a response,talk_to_human,False,refund_return
+333,Morrisons,Quiz time - I'm struggling to work out which bunch is which from @user 🤔🍌 <url>,other,False,account
+334,sainsburys,"For your eyes only, @user. Roger Moore James Bond DVDs £3 each at @user. Which 007 villain are you? #ManWithTheGoldenFilter <url>",other,False,account
+335,Tesco,classic mislabeling by @user every single grape has seeds. <url>,complaint_feedback,False,account
+336,AskPayPal,I sold a £500 item & buyer sent back diff item & requested refund. You ref. & I have no item back?! I am -£500 & no item!? Thnx,refund_return,True,order_change
+337,AmazonHelp,I want to control my fire TV stick with my echo dot but it isn't working. Help please @user @user,other,False,account
+338,sainsburys,"What a find! Avocado, tomato & basil sandwich from #Sainsburys - 11.2g of protein per pack and 100% #vegan <url>",complaint_feedback,False,billing_payment
+339,AmazonHelp,Pre-ordered in Aug. Game released yesterday. Won't get it til Tues. THX FOR SCREWING ME AGAIN @user ! NEVER ORDERING GAMES FROM YOU AGAIN! <url>,delivery,False,account
+340,AmazonHelp,Ok new problem where is my Kindle CHARGER,refund_return,False,account
+341,Morrisons,Breakfast in @user and ask for runny yolk of poached egg. But eggs arrive in store pre-cooked & simply heated in microwave #really? <url>,complaint_feedback,False,refund_return
+342,sainsburys,"So @user has decided to get into #vinyl records? Will there be an audiophile range called ""Hear the Difference""?",other,False,refund_return
+343,AskPayPal,"Hi, I sent you a DM 5 hours ago. Is it possible to get some help, please?",talk_to_human,False,other
+344,Morrisons,"hi. Just got home & noticed one of my beers was broken as I opened the packed, there’s no sign of leakage, just a smashed bottle in the box. I just purchase from the Houghton Regis branch <url>",refund_return,False,account
+345,SpotifyCares,Fuck man spotify doesn’t work <url>,other,False,other
+346,marksandspencer,So its @user who have gone early with the #christmasadvert.... a firm favourite in the office! <url>,complaint_feedback,False,account
+347,AskTarget,".@user Tell me, what is the point of someone buying me a gift card if I can only use it at the store they bought it from?!",complaint_feedback,False,account
+348,UPSHelp,GIVE ME MY PHONE. @user HAS TOLD YOU 5 TIMES THE CORRECT ADDRESS,delivery,False,order_change
+349,UPSHelp,I told you if you don't at least try and help I will make as much noise as possible I'm process of sending letter before action !!! Forgot to mention the blackmail,complaint_feedback,True,other
+350,SpotifyCares,I thought paying for a premium account would mean I wouldn’t have ads,account,False,account
+351,AmazonHelp,product delivered in spite of being cancelled. Neither picked-up nor the refund is processed. Ref order# 407-6748757-3220366,refund_return,False,order_change
+352,Tesco,I love a BLT but this one should have been called a BLTP as I found this strand of yellow plastic in my sandwich! Not nice at all! <url>,complaint_feedback,True,account
+353,AmazonHelp,Hey @user Please inform your Prime delivery drivers to wait more than 3 seconds after knocking a door before running off to leave packages with a neighbour.,delivery,False,complaint_feedback
+354,SpotifyCares,WHAT THE FUCK!!! Why is Take Care no longer on @user @user ??????????,complaint_feedback,False,account
+355,ArgosHelpers,hi :) do you sell spare parts? I'm looking for just this stand for a similar tv but can't find one anywhere. It's a bush 40/233FDVD <url>,other,False,delivery
+356,airtel_care,"Do something about your poor network service, it's really frustrating. I regret having to renew my data on this platform.",other,False,account
+357,AskeBay,"there is a problem with the app, i wont search, and i cant open my saved searched! :/",other,False,account
+358,SpotifyCares,Does anyone know why @user isn't working?,other,False,account
+359,airtel_care,You just dey start <url>,other,False,other
+360,sainsburys,Disappointed LOYAL customer.. 5 items unavailable & I also have things missing from my online order!! #sainsburys,refund_return,False,order_change
+361,AskeBay,"And please explain to me how I'm meant to be reimbursed for an item YOU removed because of a suspicious buyer, I'm being charged fees of £10 but I am not able to cancel the sale or report an unpaid case because the buyer has been removed. I relisted & you're charging me!",refund_return,False,other
+362,airtel_care,I just get new Sim three days ago and I want to add my friends to my faf. How or which code can I use to add them?,account,False,account
+363,AskPayPal,is there an issue with Paypal currently? Can't print packing slips (just get blank page in Chrome and Firefox) or postage labels,other,False,other
+364,Tesco,"Thank you @user for refunding our whole shop after the delivery incident, despite the fact we eventually received our groceries. Big up.",complaint_feedback,False,account
+365,AmazonHelp,paid for expedited shipping on 3 products (same order). 2 arrived on Saturday but Still waiting on the 3rd 😡 so much for expedited,delivery,False,other
+366,AskeBay,I got a bunch of goodies in the mail today that I ordered of off @user and picked up my paycheck b4 I left work!- Let's GOBLASTNOISE!!! #GBN,complaint_feedback,False,account
+367,marksandspencer,"disappointed guys,this was split when I opened the box,Binned the recipient, anything you can do to help? <url>",refund_return,False,refund_return
+368,UPSHelp,you suck ass! I paid for 2 day air shipping and it’s taking you over a week to get me my package ??!?!!! It doesn’t take two days to fly from Memphis to CA,delivery,False,other
+369,AskeBay,Wish I knew @user charged 10% on fucking postage fees before I sent a load of goods out. Completely dishonest and unjustified practice.,complaint_feedback,False,account
+370,SpotifyCares,when will ‘reputation’ be on Spotify!?😫😍,complaint_feedback,False,delivery
+371,ArgosHelpers,when will you be getting more iPhone X? Or when can I least order and know when to expect delivery?,other,False,delivery
+372,AskeBay,I'm locked out of my account and reporting it takes me in a loop! Help please!,account,True,account
+373,AskTarget,"So I’m a @user fan, but they’re already handling Black Friday terribly. The Red Card sale today is a hot mess — no one knows what’s going on. <url>",complaint_feedback,False,account
+374,UPSHelp,What does this say about @user? <url>,other,False,account
+375,airtel_care,"please, i tried to reactivate my line that was barred for non usage. i was told to check in an hour but it still isn't working",account,False,refund_return
+376,AskeBay,"Hi, 3 times in a row I have sold an item to then be told it's a suspicious buyer and sale canceled. Any reason why my item may be being targeted?",other,False,order_change
+377,AmazonHelp,"seriously guys, the amount of times a prime video has stopped playing mid-film and said ‘video unavailable’ is a joke - what’s up with that?",other,False,account
+378,Tesco,Bought Avocados from your whitstable store on Sunday... don't think they're meant to look like this! 😷🤢🥑 they weren't past BBD either <url>,complaint_feedback,False,billing_payment
+379,AmazonHelp,"I am having a nightmare Amazon. I pay for prime membership, and I have been on the phone trying to sort delivery issues for what must be an hour today. The service is horrific and frankly worrying. Nobody knows what is going on HEEEEEEEELP!!!!!",delivery,False,delivery
+380,SpotifyCares,"hello, I want to transfer the ownership for my premium family account but I can't access my previous account. what to do?",account,False,account
+381,UPSHelp,"so, @user @user , I finally got a smart CSR/Supervisor. Jayla fixed everything for me and I'm thrilled. Wish it could have been handled sooner and easier!",complaint_feedback,False,account
+382,AmazonHelp,back at it with messing up my order.,complaint_feedback,False,order_change
+383,AmazonHelp,how do I opt into photo delivery? I hit opt out to see what happens but I actually want it. #prime #amazon,delivery,False,delivery
+384,sainsburys,hi I think your TTD spicy Etruscan pepperoni and chilli pizza has made me ill. What can I do about this?,complaint_feedback,True,other
+385,AmazonHelp,So happy @user went back to a time before webfonts and accessibility to give us an Amazon Fresh website entirely made from images :/ <url>,complaint_feedback,False,account
+386,AskTarget,when will the 12 days of socks be restocked online? I need to order some.,other,False,order_change
+387,Morrisons,"can you give me the nutritional information for your pick n mix pumpernickel rolls, please? I couldn’t find any in store, or online. <url>",other,False,refund_return
+388,AmazonHelp,your Prime delivery is not living up to its one day service. It's getting crappier every time I order something. Why don't you rethink the prime service.,delivery,False,order_change
+389,marksandspencer,Thank you @user for the baby changing facilities and some very yummy cake <url>,complaint_feedback,False,account
+390,airtel_care,can't make call kindly investigate 09073324068 thanks,other,False,complaint_feedback
+391,AmazonHelp,Pedido @user <url>,other,False,account
+392,AmazonHelp,unlimited really is worth the $10 bucks a month.,complaint_feedback,False,other
+393,AskeBay,Omg hate selling stuff on eBay always gets lost then I loose my money AND the item!!!! 😠😠 #ebay @user,complaint_feedback,False,account
+394,airtel_care,Why can't I reach you on your customer care dial? No option to speak to a customer service agent. This is the third day now I'm trying to call y'all and my money keeps disappearing? 😡😡😡,talk_to_human,True,talk_to_human
+395,ArgosHelpers,"spent £3,500 this morning with you, and you still charge me for delivery? 🙄",billing_payment,False,other
+396,Morrisons,Hey @user can you hook me up? <url>,other,False,account
+397,AmazonHelp,Black friday j’espère que j’aurais des offres sur @user,other,False,account
+398,AmazonHelp,"après 3 jours d'utilisation, c'est officiel : le GPS de mon Samsung S8 ne fonctionne pas correctement. On fait comment ?",refund_return,False,complaint_feedback
+399,AskeBay,"Do I understand it correctly that if I put a reserve price in place, that I pay that price even if it doesnt sell?",billing_payment,False,refund_return
+400,AskTarget,Just got off the phone with <url> they HAVE to get a better process for online orders. #customerpainpoint whenever this is said and done I’m never online shopping with them again @user,complaint_feedback,False,billing_payment

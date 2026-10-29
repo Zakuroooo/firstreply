@@ -1,4 +1,80 @@
 {
+  "roi": {
+    "assumptions": {
+      "draft_time_cut": [
+        0.4,
+        0.6,
+        0.8,
+        "share of writing time saved when the draft is used"
+      ],
+      "draft_used_share": [
+        0.3,
+        0.5,
+        0.7,
+        "share of tickets where the draft is sent with only light edits"
+      ],
+      "read_route_min": [
+        0.5,
+        1.0,
+        1.5,
+        "minutes an agent spends today reading a ticket and choosing the queue"
+      ],
+      "route_time_cut": [
+        0.3,
+        0.5,
+        0.7,
+        "share of read+route time saved when the suggested queue is right"
+      ],
+      "write_reply_min": [
+        2.0,
+        3.0,
+        4.0,
+        "minutes to write a first reply from scratch today"
+      ],
+      "wrong_fix_min": [
+        0.5,
+        0.25,
+        0.1,
+        "extra minutes to notice and fix a wrong suggestion"
+      ]
+    },
+    "biggest_driver": "draft_used_share",
+    "brand": "AmazonHelp",
+    "by_model": {
+      "tfidf_logreg": {
+        "accuracy_used": 0.2,
+        "base": {
+          "agent_hours_saved_per_week": 167.2,
+          "agent_hours_saved_per_year": 8694,
+          "fte_saved": 4.18,
+          "llm_cost_per_week_usd": 0.0,
+          "minutes_saved_per_ticket": 0.8,
+          "routing_only_hours_per_week": -20.9
+        },
+        "base_share_of_staffed_hours_pct": 10.7,
+        "high": {
+          "agent_hours_saved_per_week": 495.3,
+          "agent_hours_saved_per_year": 25757,
+          "fte_saved": 12.38,
+          "llm_cost_per_week_usd": 0.0,
+          "minutes_saved_per_ticket": 2.37,
+          "routing_only_hours_per_week": 27.2
+        },
+        "low": {
+          "agent_hours_saved_per_week": -27.2,
+          "agent_hours_saved_per_year": -1413,
+          "fte_saved": -0.68,
+          "llm_cost_per_week_usd": 0.0,
+          "minutes_saved_per_ticket": -0.13,
+          "routing_only_hours_per_week": -77.3
+        }
+      }
+    },
+    "routing_break_even_accuracy_pct": 33.3,
+    "sensitivity_model": "tfidf_logreg",
+    "staffed_agent_hours_per_week": 1556,
+    "tickets_per_week": 12540
+  },
   "sla": {
     "answered": 677076,
     "answered_pct": 93.4,
@@ -37,5 +113,85 @@
     "window": "2017-10-09 to 2017-12-03",
     "worst_hour_breach_pct": 43.6,
     "worst_hour_utc": 4
+  },
+  "triage": {
+    "dev_tickets": 100,
+    "few_shot_ablation_dev": {},
+    "holdout_tickets": 150,
+    "label_counts_test": {
+      "account": 21,
+      "billing_payment": 28,
+      "complaint_feedback": 95,
+      "delivery": 49,
+      "order_change": 5,
+      "other": 66,
+      "refund_return": 25,
+      "talk_to_human": 11
+    },
+    "models": {
+      "tfidf_logreg": {
+        "accuracy_ci95": [
+          15.7,
+          24.7
+        ],
+        "accuracy_pct": 20.0,
+        "accuracy_without_threshold_pct": 16.3,
+        "bitext_in_domain_accuracy_pct": 99.9,
+        "bitext_train_rows": 20698,
+        "cost_per_1000_usd": 0.0,
+        "latency_p50_ms": 0.7,
+        "latency_p95_ms": 0.8,
+        "macro_f1_ci95": [
+          15.1,
+          24.8
+        ],
+        "macro_f1_pct": 20.0,
+        "model": "tfidf_logreg",
+        "n": 300,
+        "other_threshold": 0.35,
+        "per_class_f1": {
+          "account": 21.1,
+          "billing_payment": 16.7,
+          "complaint_feedback": 3.9,
+          "delivery": 42.9,
+          "order_change": 14.3,
+          "other": 26.4,
+          "refund_return": 9.5,
+          "talk_to_human": 25.0
+        }
+      }
+    },
+    "skipped": {
+      "few_shot_ablation": "not run: needs GROQ_API_KEY or a full cache",
+      "gpt-oss-120b": "not run: no GROQ_API_KEY and only 156/300 calls cached",
+      "gpt-oss-20b": "not run: no GROQ_API_KEY and only 154/300 calls cached"
+    },
+    "test_tickets": 300,
+    "urgency": {
+      "holdout": {
+        "rules_with_tfidf_queue": {
+          "rules_only": {
+            "caught": 3,
+            "flagged": 4,
+            "precision_pct": 75.0,
+            "recall_pct": 30.0
+          },
+          "tickets": 150,
+          "urgent": 10
+        }
+      },
+      "test": {
+        "rules_with_tfidf_queue": {
+          "rules_only": {
+            "caught": 13,
+            "flagged": 15,
+            "precision_pct": 86.7,
+            "recall_pct": 81.2
+          },
+          "tickets": 300,
+          "urgent": 16
+        }
+      }
+    }
   }
 }
