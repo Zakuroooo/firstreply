@@ -108,6 +108,9 @@ def main():
 
     worst_hour = by_time.groupby("hour_utc").apply(
         lambda g: np.average(g.breach_pct, weights=g.tickets), include_groups=False)
+    by_day = by_time.groupby("weekday").apply(
+        lambda g: np.average(g.breach_pct, weights=g.tickets), include_groups=False)
+    fb = by_brand.set_index("brand").loc[FORECAST_BRAND]
     fast = by_brand.sort_values("median_frt_min").iloc[0]
     slow = by_brand.sort_values("median_frt_min").iloc[-1]
     stats = {
@@ -118,6 +121,10 @@ def main():
         "brands_with_1000_plus": int(len(by_brand)),
         "fastest_brand": fast.brand, "fastest_brand_median_min": float(fast.median_frt_min),
         "slowest_brand": slow.brand, "slowest_brand_median_min": float(slow.median_frt_min),
+        "breach_pct_by_weekday": {d: round(float(v), 1) for d, v in by_day.items()},
+        "forecast_brand_median_frt_min": float(fb.median_frt_min),
+        "forecast_brand_p90_frt_min": float(fb.p90_frt_min),
+        "forecast_brand_breach_pct": float(fb.breach_pct),
         "worst_hour_utc": int(worst_hour.idxmax()), "worst_hour_breach_pct": round(float(worst_hour.max()), 1),
         "best_hour_utc": int(worst_hour.idxmin()), "best_hour_breach_pct": round(float(worst_hour.min()), 1),
         "backlog_peak": int(backlog.waiting.max()),

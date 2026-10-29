@@ -41,6 +41,64 @@
     "biggest_driver": "draft_used_share",
     "brand": "AmazonHelp",
     "by_model": {
+      "gpt-oss-120b (interim, n=154)": {
+        "accuracy_used": 0.714,
+        "base": {
+          "agent_hours_saved_per_week": 247.8,
+          "agent_hours_saved_per_year": 12884,
+          "fte_saved": 6.19,
+          "llm_cost_per_week_usd": 1.06,
+          "minutes_saved_per_ticket": 1.19,
+          "routing_only_hours_per_week": 59.7
+        },
+        "base_share_of_staffed_hours_pct": 15.9,
+        "high": {
+          "agent_hours_saved_per_week": 618.9,
+          "agent_hours_saved_per_year": 32181,
+          "fte_saved": 15.47,
+          "llm_cost_per_week_usd": 1.06,
+          "minutes_saved_per_ticket": 2.96,
+          "routing_only_hours_per_week": 150.7
+        },
+        "interim": true,
+        "low": {
+          "agent_hours_saved_per_week": 42.7,
+          "agent_hours_saved_per_year": 2218,
+          "fte_saved": 1.07,
+          "llm_cost_per_week_usd": 1.06,
+          "minutes_saved_per_ticket": 0.2,
+          "routing_only_hours_per_week": -7.5
+        }
+      },
+      "gpt-oss-20b (interim, n=154)": {
+        "accuracy_used": 0.662,
+        "base": {
+          "agent_hours_saved_per_week": 239.6,
+          "agent_hours_saved_per_year": 12460,
+          "fte_saved": 5.99,
+          "llm_cost_per_week_usd": 0.53,
+          "minutes_saved_per_ticket": 1.15,
+          "routing_only_hours_per_week": 51.5
+        },
+        "base_share_of_staffed_hours_pct": 15.4,
+        "high": {
+          "agent_hours_saved_per_week": 606.4,
+          "agent_hours_saved_per_year": 31531,
+          "fte_saved": 15.16,
+          "llm_cost_per_week_usd": 0.53,
+          "minutes_saved_per_ticket": 2.9,
+          "routing_only_hours_per_week": 138.2
+        },
+        "interim": true,
+        "low": {
+          "agent_hours_saved_per_week": 35.6,
+          "agent_hours_saved_per_year": 1851,
+          "fte_saved": 0.89,
+          "llm_cost_per_week_usd": 0.53,
+          "minutes_saved_per_ticket": 0.17,
+          "routing_only_hours_per_week": -14.6
+        }
+      },
       "tfidf_logreg": {
         "accuracy_used": 0.2,
         "base": {
@@ -60,6 +118,7 @@
           "minutes_saved_per_ticket": 2.37,
           "routing_only_hours_per_week": 27.2
         },
+        "interim": false,
         "low": {
           "agent_hours_saved_per_week": -27.2,
           "agent_hours_saved_per_year": -1413,
@@ -70,8 +129,13 @@
         }
       }
     },
+    "drafting_hours_per_week": {
+      "base": 188.1,
+      "high": 468.2,
+      "low": 50.2
+    },
     "routing_break_even_accuracy_pct": 33.3,
-    "sensitivity_model": "tfidf_logreg",
+    "sensitivity_model": "gpt-oss-120b (interim, n=154)",
     "staffed_agent_hours_per_week": 1556,
     "tickets_per_week": 12540
   },

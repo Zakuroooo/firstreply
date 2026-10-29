@@ -145,10 +145,12 @@ def interim_cached_subset(test, classical_preds):
     cls = [p for p, m in zip(classical_preds, mask) if m]
     rows = [score("tfidf_logreg", sub.label.tolist(), cls, 0.0, [0.0], {"covered_queues_accuracy_pct":
                                                                       covered_accuracy(sub.label, cls)})]
+    preds = {}
     for name, model in (("gpt-oss-20b", SMALL), ("gpt-oss-120b", LARGE)):
-        row, preds, _ = run_llm(name, model, sub)
-        row["covered_queues_accuracy_pct"] = covered_accuracy(sub.label, preds)
+        row, preds[name], _ = run_llm(name, model, sub)
+        row["covered_queues_accuracy_pct"] = covered_accuracy(sub.label, preds[name])
         rows.append(row)
+    failures(sub, preds).to_csv(OUT / "eval_failures_interim_llm.csv", index=False)
     rows[0]["latency_p50_ms"] = rows[0]["latency_p95_ms"] = None  # measured on the full set instead
     return {"interim": True, "tickets": len(sub), "eval_ids": sub.eval_id.tolist(),
             "note": "partial: only test tickets with cached answers from both LLMs; not the headline result",

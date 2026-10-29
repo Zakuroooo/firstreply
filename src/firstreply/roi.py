@@ -68,16 +68,24 @@ def sensitivity(accuracy, tickets_per_week):
 
 def main():
     n = numbers.load()
-    sla, models = n["sla"], n["triage"]["models"]
+    sla, triage = n["sla"], n["triage"]
+    models = {name: {**m, "interim": False} for name, m in triage["models"].items()}
+    # While the full LLM run is missing, also show the LLMs' partial (cached-subset) accuracy, clearly marked.
+    interim = triage.get("interim_cached_subset") or {}
+    for name, m in interim.get("models", {}).items():
+        if name not in models:
+            models[f"{name} (interim, n={interim['tickets']})"] = {**m, "interim": True}
     tickets_per_week = sla["forecast_brand_tickets_per_week"]
     workload_hours = sla["staffing_agent_hours_per_week_workload"]
     out = {"brand": sla["forecast_brand"], "tickets_per_week": tickets_per_week,
-           "staffed_agent_hours_per_week": workload_hours, "assumptions": ASSUMPTIONS, "by_model": {}}
+           "staffed_agent_hours_per_week": workload_hours, "assumptions": ASSUMPTIONS, "by_model": {},
+           "drafting_hours_per_week": {lvl: round(drafting_minutes(pick(lvl)) * tickets_per_week / 60, 1)
+                                       for lvl in ("low", "base", "high")}}
     for name, m in models.items():
         acc = m["accuracy_pct"] / 100
         cost = m["cost_per_1000_usd"]
         out["by_model"][name] = {
-            "accuracy_used": round(acc, 3),
+            "accuracy_used": round(acc, 3), "interim": m["interim"],
             **{level: scenario(acc, tickets_per_week, pick(level), cost) for level in ("low", "base", "high")},
         }
         base_hours = out["by_model"][name]["base"]["agent_hours_saved_per_week"]
@@ -93,7 +101,8 @@ def main():
     out["biggest_driver"] = sens.iloc[0].assumption
     numbers.save_section("roi", out)
     for name, r in out["by_model"].items():
-        print(name, {lvl: r[lvl]["agent_hours_saved_per_week"] for lvl in ("low", "base", "high")})
+        print(name, {lvl: (r[lvl]["routing_only_hours_per_week"], r[lvl]["agent_hours_saved_per_week"])
+                     for lvl in ("low", "base", "high")})
     print(sens.to_string(index=False))
 
 
