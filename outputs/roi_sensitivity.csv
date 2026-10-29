@@ -1,7 +1,7 @@
 assumption,low_value,high_value,hours_week_at_low,hours_week_at_high,swing,meaning
-draft_used_share,0.3,0.7,172.5,323.0,150.5,share of tickets where the draft is sent with only light edits
-write_reply_min,2.0,4.0,185.1,310.5,125.4,minutes to write a first reply from scratch today
-draft_time_cut,0.4,0.8,185.1,310.5,125.4,share of writing time saved when the draft is used
-read_route_min,0.5,1.5,210.5,285.1,74.6,minutes an agent spends today reading a ticket and choosing the queue
-route_time_cut,0.3,0.7,217.9,277.6,59.7,share of read+route time saved when the suggested queue is right
-wrong_fix_min,0.5,0.1,232.8,256.7,23.9,extra minutes to notice and fix a wrong suggestion
+draft_used_share,0.3,0.7,173.9,324.4,150.5,share of tickets where the draft is sent with only light edits
+write_reply_min,2.0,4.0,186.5,311.9,125.4,minutes to write a first reply from scratch today
+draft_time_cut,0.4,0.8,186.5,311.9,125.4,share of writing time saved when the draft is used
+read_route_min,0.5,1.5,211.4,287.0,75.6,minutes an agent spends today reading a ticket and choosing the queue
+route_time_cut,0.3,0.7,219.0,279.4,60.4,share of read+route time saved when the suggested queue is right
+wrong_fix_min,0.5,0.1,234.7,257.9,23.2,extra minutes to notice and fix a wrong suggestion

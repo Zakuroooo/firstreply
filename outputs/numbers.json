@@ -41,62 +41,62 @@
     "biggest_driver": "draft_used_share",
     "brand": "AmazonHelp",
     "by_model": {
-      "gpt-oss-120b (interim, n=154)": {
-        "accuracy_used": 0.714,
+      "gpt-oss-120b": {
+        "accuracy_used": 0.723,
         "base": {
-          "agent_hours_saved_per_week": 247.8,
-          "agent_hours_saved_per_year": 12884,
-          "fte_saved": 6.19,
+          "agent_hours_saved_per_week": 249.2,
+          "agent_hours_saved_per_year": 12957,
+          "fte_saved": 6.23,
           "llm_cost_per_week_usd": 1.06,
           "minutes_saved_per_ticket": 1.19,
-          "routing_only_hours_per_week": 59.7
+          "routing_only_hours_per_week": 61.1
         },
-        "base_share_of_staffed_hours_pct": 15.9,
+        "base_share_of_staffed_hours_pct": 16.0,
         "high": {
-          "agent_hours_saved_per_week": 618.9,
-          "agent_hours_saved_per_year": 32181,
-          "fte_saved": 15.47,
+          "agent_hours_saved_per_week": 621.0,
+          "agent_hours_saved_per_year": 32294,
+          "fte_saved": 15.53,
           "llm_cost_per_week_usd": 1.06,
-          "minutes_saved_per_ticket": 2.96,
-          "routing_only_hours_per_week": 150.7
+          "minutes_saved_per_ticket": 2.97,
+          "routing_only_hours_per_week": 152.9
         },
-        "interim": true,
+        "interim": false,
         "low": {
-          "agent_hours_saved_per_week": 42.7,
-          "agent_hours_saved_per_year": 2218,
-          "fte_saved": 1.07,
+          "agent_hours_saved_per_week": 43.9,
+          "agent_hours_saved_per_year": 2282,
+          "fte_saved": 1.1,
           "llm_cost_per_week_usd": 1.06,
-          "minutes_saved_per_ticket": 0.2,
-          "routing_only_hours_per_week": -7.5
+          "minutes_saved_per_ticket": 0.21,
+          "routing_only_hours_per_week": -6.3
         }
       },
-      "gpt-oss-20b (interim, n=154)": {
-        "accuracy_used": 0.662,
+      "gpt-oss-20b": {
+        "accuracy_used": 0.67,
         "base": {
-          "agent_hours_saved_per_week": 239.6,
-          "agent_hours_saved_per_year": 12460,
-          "fte_saved": 5.99,
+          "agent_hours_saved_per_week": 240.9,
+          "agent_hours_saved_per_year": 12525,
+          "fte_saved": 6.02,
           "llm_cost_per_week_usd": 0.53,
           "minutes_saved_per_ticket": 1.15,
-          "routing_only_hours_per_week": 51.5
+          "routing_only_hours_per_week": 52.8
         },
-        "base_share_of_staffed_hours_pct": 15.4,
+        "base_share_of_staffed_hours_pct": 15.5,
         "high": {
-          "agent_hours_saved_per_week": 606.4,
-          "agent_hours_saved_per_year": 31531,
-          "fte_saved": 15.16,
+          "agent_hours_saved_per_week": 608.3,
+          "agent_hours_saved_per_year": 31631,
+          "fte_saved": 15.21,
           "llm_cost_per_week_usd": 0.53,
-          "minutes_saved_per_ticket": 2.9,
-          "routing_only_hours_per_week": 138.2
+          "minutes_saved_per_ticket": 2.91,
+          "routing_only_hours_per_week": 140.1
         },
-        "interim": true,
+        "interim": false,
         "low": {
-          "agent_hours_saved_per_week": 35.6,
-          "agent_hours_saved_per_year": 1851,
-          "fte_saved": 0.89,
+          "agent_hours_saved_per_week": 36.7,
+          "agent_hours_saved_per_year": 1907,
+          "fte_saved": 0.92,
           "llm_cost_per_week_usd": 0.53,
-          "minutes_saved_per_ticket": 0.17,
-          "routing_only_hours_per_week": -14.6
+          "minutes_saved_per_ticket": 0.18,
+          "routing_only_hours_per_week": -13.5
         }
       },
       "tfidf_logreg": {
@@ -135,7 +135,7 @@
       "low": 50.2
     },
     "routing_break_even_accuracy_pct": 33.3,
-    "sensitivity_model": "gpt-oss-120b (interim, n=154)",
+    "sensitivity_model": "gpt-oss-120b",
     "staffed_agent_hours_per_week": 1556,
     "tickets_per_week": 12540
   },
@@ -192,261 +192,70 @@
   },
   "triage": {
     "dev_tickets": 100,
-    "few_shot_ablation_dev": {},
-    "holdout_tickets": 150,
-    "interim_cached_subset": {
-      "eval_ids": [
-        101,
-        102,
-        103,
-        104,
-        105,
-        106,
-        107,
-        108,
-        109,
-        110,
-        111,
-        112,
-        113,
-        114,
-        115,
-        116,
-        117,
-        118,
-        119,
-        120,
-        121,
-        122,
-        123,
-        124,
-        125,
-        126,
-        127,
-        128,
-        129,
-        130,
-        131,
-        132,
-        133,
-        134,
-        135,
-        136,
-        137,
-        138,
-        139,
-        140,
-        141,
-        142,
-        143,
-        144,
-        145,
-        146,
-        147,
-        148,
-        149,
-        150,
-        151,
-        152,
-        153,
-        154,
-        155,
-        156,
-        157,
-        158,
-        159,
-        160,
-        161,
-        162,
-        163,
-        164,
-        165,
-        166,
-        167,
-        168,
-        169,
-        170,
-        171,
-        172,
-        173,
-        174,
-        175,
-        176,
-        177,
-        178,
-        179,
-        180,
-        181,
-        182,
-        183,
-        184,
-        185,
-        186,
-        187,
-        188,
-        189,
-        190,
-        191,
-        192,
-        193,
-        194,
-        195,
-        196,
-        197,
-        198,
-        199,
-        200,
-        201,
-        202,
-        203,
-        204,
-        205,
-        206,
-        207,
-        208,
-        209,
-        210,
-        211,
-        212,
-        213,
-        214,
-        215,
-        216,
-        217,
-        218,
-        219,
-        220,
-        221,
-        222,
-        223,
-        224,
-        225,
-        226,
-        227,
-        228,
-        229,
-        230,
-        231,
-        232,
-        233,
-        234,
-        235,
-        236,
-        237,
-        238,
-        239,
-        240,
-        241,
-        242,
-        243,
-        244,
-        245,
-        246,
-        247,
-        248,
-        249,
-        250,
-        251,
-        252,
-        253,
-        254
-      ],
-      "interim": true,
-      "models": {
-        "gpt-oss-120b": {
-          "accuracy_ci95": [
-            64.3,
-            78.6
-          ],
-          "accuracy_pct": 71.4,
-          "avg_input_tokens": 360,
-          "avg_output_tokens": 51,
-          "cost_per_1000_usd": 0.0844,
-          "covered_queues_accuracy_pct": 82.6,
-          "invalid_output_pct": 0.0,
-          "latency_p50_ms": 588.8,
-          "latency_p95_ms": 1185.9,
-          "macro_f1_ci95": [
-            54.4,
-            76.4
-          ],
-          "macro_f1_pct": 67.2,
-          "model": "gpt-oss-120b",
-          "n": 154,
-          "per_class_f1": {
-            "account": 77.8,
-            "billing_payment": 80.0,
-            "complaint_feedback": 64.3,
-            "delivery": 94.3,
-            "order_change": 40.0,
-            "other": 64.2,
-            "refund_return": 66.7,
-            "talk_to_human": 50.0
-          }
-        },
-        "gpt-oss-20b": {
-          "accuracy_ci95": [
-            59.1,
-            73.4
-          ],
-          "accuracy_pct": 66.2,
-          "avg_input_tokens": 360,
-          "avg_output_tokens": 51,
-          "cost_per_1000_usd": 0.0424,
-          "covered_queues_accuracy_pct": 73.9,
-          "invalid_output_pct": 0.0,
-          "latency_p50_ms": 549.4,
-          "latency_p95_ms": 1085.9,
-          "macro_f1_ci95": [
-            48.9,
-            71.1
-          ],
-          "macro_f1_pct": 61.4,
-          "model": "gpt-oss-20b",
-          "n": 154,
-          "per_class_f1": {
-            "account": 60.0,
-            "billing_payment": 77.4,
-            "complaint_feedback": 60.0,
-            "delivery": 88.0,
-            "order_change": 33.3,
-            "other": 63.2,
-            "refund_return": 59.3,
-            "talk_to_human": 50.0
-          }
-        },
-        "tfidf_logreg": {
-          "accuracy_ci95": [
-            16.2,
-            29.2
-          ],
-          "accuracy_pct": 22.7,
-          "cost_per_1000_usd": 0.0,
-          "covered_queues_accuracy_pct": 33.3,
-          "latency_p50_ms": null,
-          "latency_p95_ms": null,
-          "macro_f1_ci95": [
-            15.4,
-            30.7
-          ],
-          "macro_f1_pct": 23.5,
-          "model": "tfidf_logreg",
-          "n": 154,
-          "per_class_f1": {
-            "account": 20.6,
-            "billing_payment": 28.6,
-            "complaint_feedback": 4.0,
-            "delivery": 41.2,
-            "order_change": 28.6,
-            "other": 34.4,
-            "refund_return": 5.9,
-            "talk_to_human": 25.0
-          }
+    "few_shot_ablation_dev": {
+      "gpt-oss-20b few-shot": {
+        "accuracy_ci95": [
+          65.6,
+          82.8
+        ],
+        "accuracy_pct": 74.2,
+        "avg_input_tokens": 557,
+        "avg_output_tokens": 53,
+        "cost_per_1000_usd": 0.0576,
+        "invalid_output_pct": 0.0,
+        "latency_p50_ms": 1006.0,
+        "latency_p95_ms": 3157.0,
+        "macro_f1_ci95": [
+          52.7,
+          74.5
+        ],
+        "macro_f1_pct": 65.6,
+        "model": "gpt-oss-20b few-shot",
+        "n": 93,
+        "per_class_f1": {
+          "account": 72.0,
+          "billing_payment": 66.7,
+          "complaint_feedback": 66.7,
+          "delivery": 92.9,
+          "order_change": 0.0,
+          "other": 71.7,
+          "refund_return": 80.0,
+          "talk_to_human": 75.0
         }
       },
-      "note": "partial: only test tickets with cached answers from both LLMs; not the headline result",
-      "tickets": 154
+      "gpt-oss-20b zero-shot": {
+        "accuracy_ci95": [
+          69.9,
+          85.0
+        ],
+        "accuracy_pct": 77.4,
+        "avg_input_tokens": 358,
+        "avg_output_tokens": 55,
+        "cost_per_1000_usd": 0.0433,
+        "invalid_output_pct": 0.0,
+        "latency_p50_ms": 623.6,
+        "latency_p95_ms": 1884.4,
+        "macro_f1_ci95": [
+          57.5,
+          77.5
+        ],
+        "macro_f1_pct": 69.8,
+        "model": "gpt-oss-20b zero-shot",
+        "n": 93,
+        "per_class_f1": {
+          "account": 78.3,
+          "billing_payment": 85.7,
+          "complaint_feedback": 73.5,
+          "delivery": 96.3,
+          "order_change": 0.0,
+          "other": 70.4,
+          "refund_return": 87.5,
+          "talk_to_human": 66.7
+        }
+      }
     },
+    "holdout_tickets": 150,
+    "interim_cached_subset": null,
     "label_counts_test": {
       "account": 21,
       "billing_payment": 28,
@@ -458,6 +267,66 @@
       "talk_to_human": 11
     },
     "models": {
+      "gpt-oss-120b": {
+        "accuracy_ci95": [
+          67.0,
+          77.3
+        ],
+        "accuracy_pct": 72.3,
+        "avg_input_tokens": 360,
+        "avg_output_tokens": 51,
+        "cost_per_1000_usd": 0.0848,
+        "invalid_output_pct": 0.0,
+        "latency_p50_ms": 602.9,
+        "latency_p95_ms": 1309.9,
+        "macro_f1_ci95": [
+          59.3,
+          74.6
+        ],
+        "macro_f1_pct": 67.4,
+        "model": "gpt-oss-120b",
+        "n": 300,
+        "per_class_f1": {
+          "account": 80.0,
+          "billing_payment": 72.1,
+          "complaint_feedback": 67.5,
+          "delivery": 94.2,
+          "order_change": 25.0,
+          "other": 64.9,
+          "refund_return": 69.1,
+          "talk_to_human": 66.7
+        }
+      },
+      "gpt-oss-20b": {
+        "accuracy_ci95": [
+          61.7,
+          72.3
+        ],
+        "accuracy_pct": 67.0,
+        "avg_input_tokens": 360,
+        "avg_output_tokens": 51,
+        "cost_per_1000_usd": 0.0423,
+        "invalid_output_pct": 0.0,
+        "latency_p50_ms": 585.4,
+        "latency_p95_ms": 1371.2,
+        "macro_f1_ci95": [
+          57.2,
+          71.6
+        ],
+        "macro_f1_pct": 64.9,
+        "model": "gpt-oss-20b",
+        "n": 300,
+        "per_class_f1": {
+          "account": 74.4,
+          "billing_payment": 75.5,
+          "complaint_feedback": 56.8,
+          "delivery": 86.9,
+          "order_change": 33.3,
+          "other": 63.5,
+          "refund_return": 66.7,
+          "talk_to_human": 62.5
+        }
+      },
       "tfidf_logreg": {
         "accuracy_ci95": [
           15.7,
@@ -469,8 +338,8 @@
         "bitext_train_rows": 20698,
         "cost_per_1000_usd": 0.0,
         "covered_queues_accuracy_pct": 30.2,
-        "latency_p50_ms": 0.7,
-        "latency_p95_ms": 0.8,
+        "latency_p50_ms": 0.3,
+        "latency_p95_ms": 0.3,
         "macro_f1_ci95": [
           15.1,
           24.8
@@ -491,14 +360,26 @@
         }
       }
     },
-    "skipped": {
-      "few_shot_ablation": "not run: needs GROQ_API_KEY or a full cache",
-      "gpt-oss-120b": "not run: no GROQ_API_KEY and only 156/300 calls cached",
-      "gpt-oss-20b": "not run: no GROQ_API_KEY and only 154/300 calls cached"
-    },
+    "skipped": {},
     "test_tickets": 300,
     "urgency": {
       "holdout": {
+        "gpt-oss-120b": {
+          "rules_only": {
+            "caught": 3,
+            "flagged": 4,
+            "precision_pct": 75.0,
+            "recall_pct": 30.0
+          },
+          "rules_plus_ai_raise": {
+            "caught": 7,
+            "flagged": 8,
+            "precision_pct": 87.5,
+            "recall_pct": 70.0
+          },
+          "tickets": 150,
+          "urgent": 10
+        },
         "rules_with_tfidf_queue": {
           "rules_only": {
             "caught": 3,
@@ -511,6 +392,38 @@
         }
       },
       "test": {
+        "gpt-oss-120b": {
+          "rules_only": {
+            "caught": 13,
+            "flagged": 15,
+            "precision_pct": 86.7,
+            "recall_pct": 81.2
+          },
+          "rules_plus_ai_raise": {
+            "caught": 13,
+            "flagged": 17,
+            "precision_pct": 76.5,
+            "recall_pct": 81.2
+          },
+          "tickets": 300,
+          "urgent": 16
+        },
+        "gpt-oss-20b": {
+          "rules_only": {
+            "caught": 13,
+            "flagged": 15,
+            "precision_pct": 86.7,
+            "recall_pct": 81.2
+          },
+          "rules_plus_ai_raise": {
+            "caught": 13,
+            "flagged": 15,
+            "precision_pct": 86.7,
+            "recall_pct": 81.2
+          },
+          "tickets": 300,
+          "urgent": 16
+        },
         "rules_with_tfidf_queue": {
           "rules_only": {
             "caught": 13,

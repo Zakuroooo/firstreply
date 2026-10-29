@@ -8,8 +8,8 @@ Numbers come from `outputs/numbers.json`.
 I took 724,846 real support tickets from Twitter and measured how fast brands first reply. Median is about
 24 minutes, but 35% miss a one-hour target and the slowest 10% wait about 9 hours. Then I asked: would AI
 triage help? I tested a classical model and two LLMs on the same 300 hand-labelled tweets, with cost and
-latency. The classical model fell from 99.9% on clean data to 20% on real tweets. LLMs reached about 70% on
-an interim subset, for under 10 cents per 1,000 tickets. I wrote it up as a memo: what to pilot, how many
+latency. The classical model fell from 99.9% on clean data to 20% on real tweets. LLMs reached 67-72% on
+the same 300 tweets, for under 10 cents per 1,000 tickets. I wrote it up as a memo: what to pilot, how many
 hours it may save, and how to roll it out safely with a human approving every reply.
 
 **2. Why this project and not another classifier?**
@@ -61,13 +61,13 @@ few-shot examples chosen on a separate dev set. LLM calls cached so anyone gets 
 
 **12. Why report macro-F1 and confidence intervals?**
 Accuracy hides small classes. Macro-F1 gives every queue equal weight. And 300 tickets is small, so I
-bootstrap a 95% interval. Example: 120b at 71% vs 20b at 66% - the intervals overlap, so I do not claim 120b is
+bootstrap a 95% interval. Example: 120b at 72.3% vs 20b at 67.0% - the intervals overlap, so I do not claim 120b is
 better. Classical vs LLM intervals do not overlap, so that gap is real.
 
-**13. Your LLM numbers are interim. Why, and what would you do?**
-The build machine had no API key. The earlier run had cached real calls for 154 of 300 test tickets, so I
-scored all models on exactly those 154 and labelled it interim. The harness finishes the full run the moment a
-key is set. I would never fill the gap with estimates.
+**13. Were the LLM numbers always on all 300 tickets?**
+No. At first only 154 of 300 calls were cached, so I scored every model on exactly those 154 and labelled it
+interim instead of filling the gap with estimates. Then I finished the run: 20b 67.0%, 120b 72.3% on all 300.
+Every call is cached, so anyone can re-run it without an API key.
 
 **14. What do cost and latency look like?**
 About 360 input and 51 output tokens per ticket. That is $0.04 per 1,000 tickets on the small model and $0.08 on
@@ -105,7 +105,7 @@ Everything else is an assumption with a low, base and high value, written in the
 
 **21. What is the most important number in the ROI?**
 The break-even: 33% routing accuracy. Below it, suggestions waste time. The classical model at 20% would cost
-about 21 hours a week. The LLM at 71% (interim) saves about 60 hours a week from routing at base.
+about 21 hours a week. The LLM at 72% saves about 61 hours a week from routing at base.
 
 **22. Which assumption worries you most?**
 How often agents actually use the draft. It swings the answer by about 150 hours a week. So the pilot's first

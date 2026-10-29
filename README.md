@@ -22,10 +22,10 @@ All from [`outputs/numbers.json`](outputs/numbers.json), rebuilt by `make all`.
 | Best forecast for staffing? | Same hour last week: WAPE **27.6%** vs 34.9% flat |
 | Agents needed (AmazonHelp volume)? | 1,556 agent-hours/week, peak 15 agents (6-min handle time, 85% occupancy assumed) |
 | Classical triage on tidy vs real text? | **99.9%** on Bitext -> **20.0%** on real tweets (CI 15.7-24.7) |
-| LLM triage (interim, 154 tickets)? | 66.2% (20b) / **71.4%** (120b) vs 22.7% classical on the same tickets |
+| LLM triage on the same 300 tweets? | 67.0% (20b) / **72.3%** (120b, CI 67.0-77.3) vs 20.0% classical |
 | LLM cost and speed? | **$0.04-0.08 per 1,000 tickets**, ~0.6 s median |
-| Urgency rules on fresh tweets? | Caught 3 of 10 urgent (30%) vs 13 of 16 on the set they were written on |
-| Is routing worth it? | Break-even at 33.3% accuracy: classical loses ~21 h/week, LLM saves ~60 h/week (base) |
+| Urgency rules on fresh tweets? | Rules alone caught 3 of 10 urgent; with the AI allowed to raise urgency, **7 of 10** |
+| Is routing worth it? | Break-even at 33.3% accuracy: classical loses ~21 h/week, LLM saves ~61 h/week (base) |
 
 ## Run it
 ```bash
@@ -49,8 +49,8 @@ steps: [docs/RUNBOOK.md](docs/RUNBOOK.md).
 | `LEARN/` | every concept from zero + 25 interview questions |
 
 ## Limits (read before quoting any number)
-- **LLM results are interim**: 154 of 300 test tickets (real cached calls). The full run needs a Groq API key;
-  the harness runs it the moment one is set. Few-shot ablation and AI-raised urgency are not run yet.
+- LLM results are on all 300 test tickets (full run Oct 29, 2026; every call cached, so `make evals` reproduces
+  them without a key). 120b vs 20b is not separable: the intervals overlap.
 - One labeller, no agreement score; small classes (order_change has 5 test tickets).
 - Twitter only, 2017, UTC times; the 60-minute SLA, handle time and occupancy are assumptions.
 - ROI drafting savings are assumptions with a wide range until a pilot measures them.

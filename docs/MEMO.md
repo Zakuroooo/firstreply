@@ -9,8 +9,8 @@ tweets. All numbers from `outputs/numbers.json`; assumptions marked **[A]**.
 - **Do not** switch on the classical (keyword-style) router. On real tweets it is right 20% of the time, below
   the 33% break-even, so it would **cost** about 21 agent-hours a week instead of saving them.
 - **Do** run a 6-week pilot of LLM-suggested queues + draft replies, with an agent approving every reply.
-  Early evidence (interim, 154 tickets): 71% routing accuracy for ~$1 per week of model cost.
-- Expected saving at base assumptions: **~60 agent-hours/week from routing** (≈1.5 FTE), plus **50-468 hours
+  Evidence (300 hand-labelled tweets): 72% routing accuracy for ~$1 per week of model cost.
+- Expected saving at base assumptions: **~61 agent-hours/week from routing** (≈1.5 FTE), plus **50-468 hours
   from drafts** - a wide range because draft usefulness is not measured yet. The pilot measures it.
 
 ## 2. Where the team is today (current state)
@@ -60,12 +60,12 @@ flowchart LR
 ```
 Rule: the model may make a ticket **more** urgent, never less. Nothing is sent without an agent.
 
-## 5. Options compared (same 300 / 154 real tickets)
+## 5. Options compared (same 300 real tickets)
 | Option | Routing accuracy | Cost per 1,000 tickets | Latency | Verdict |
 |---|---|---|---|---|
 | A. Classical, trained on tidy public data | 20.0% (99.9% on its own tidy data) | ~$0 | <1 ms | Below break-even. Reject. |
-| B. Small LLM (gpt-oss-20b) | 66.2% (interim) | $0.042 | ~0.5 s | Viable, cheapest |
-| C. Large LLM (gpt-oss-120b) | 71.4% (interim) | $0.084 | ~0.6 s | Pilot default; B vs C not separable yet |
+| B. Small LLM (gpt-oss-20b) | 67.0% | $0.042 | ~0.6 s | Viable, cheapest |
+| C. Large LLM (gpt-oss-120b) | 72.3% | $0.084 | ~0.6 s | Pilot default; B vs C not separable (CIs overlap) |
 | D. Classical trained on our own labelled tickets | not tested | ~$0 | <1 ms | Re-test after pilot gives labels |
 
 ## 6. ROI in agent-hours (AmazonHelp volume, 12,540 tickets/week)
@@ -76,11 +76,11 @@ suggestion. Drafting saves 50% of tickets [A] x 3 min [A] x 60% [A]. All [A] val
 | Hours saved per week | Low | Base | High |
 |---|---|---|---|
 | Routing, classical (20.0%) | -77.3 | **-20.9** | 27.2 |
-| Routing, large LLM (71.4%, interim) | -7.5 | **59.7** | 150.7 |
+| Routing, large LLM (72.3%) | -6.3 | **61.1** | 152.9 |
 | Drafting (any model; not measured) | 50.2 | 188.1 | 468.2 |
-| **Total, large LLM** | 42.7 | **247.8** | 618.9 |
+| **Total, large LLM** | 43.9 | **249.2** | 621.0 |
 
-- Base total = 15.9% of the 1,556 staffed hours. Model cost ≈ $1.06/week for triage (drafts not yet priced).
+- Base total = 16.0% of the 1,556 staffed hours. Model cost ≈ $1.06/week for triage (drafts not yet priced).
 - Break-even routing accuracy = **33.3%**. Below it, suggestions waste time.
 - Sensitivity (`outputs/roi_sensitivity.csv`): the biggest unknown is **how often a draft is used** (swing 150
   hours/week), then writing time per reply. Routing assumptions move the answer far less. So the pilot must

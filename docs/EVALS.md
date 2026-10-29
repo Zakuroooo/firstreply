@@ -24,43 +24,41 @@ Every number here is copied from `outputs/numbers.json` (section `triage`), prod
 - Why it fails (`outputs/eval_confusion_tfidf.csv`): unfamiliar text falls into `account`, the biggest mapped
   Bitext class; 48 of 95 complaint tweets go there. Delivery is its best queue (F1 42.9%).
 
-## Result 2 - LLMs vs classical on the same 154 tickets (INTERIM)
-The full LLM run needs a Groq key, which this build environment did not have. The earlier session made real
-calls for 154 of the 300 test tickets (cached in `outputs/llm_cache/`). All three models are scored on exactly
-those 154 tickets. **This is a partial result** - treat it as a direction, not a final number.
+## Result 2 - LLMs vs classical on the same 300 tickets
+Full run on Oct 29, 2026 (every call cached in `outputs/llm_cache/`, so `make evals` reproduces it without a key).
 
-| Model (zero-shot, same prompt) | Accuracy | 95% CI | Macro-F1 | Covered-queue acc. | Cost / 1,000 tickets | Latency p50 / p95 | Invalid JSON |
+| Model (zero-shot, same prompt) | Accuracy | 95% CI | Macro-F1 | 95% CI | Cost / 1,000 tickets | Latency p50 / p95 | Invalid JSON |
 |---|---|---|---|---|---|---|---|
-| TF-IDF + LR | 22.7% | 16.2-29.2 | 23.5% | 33.3% | ~$0 | <1 ms | - |
-| gpt-oss-20b | 66.2% | 59.1-73.4 | 61.4% | 73.9% | $0.042 | 549 / 1,086 ms | 0% |
-| gpt-oss-120b | 71.4% | 64.3-78.6 | 67.2% | 82.6% | $0.084 | 589 / 1,186 ms | 0% |
+| TF-IDF + LR | 20.0% | 15.7-24.7 | 20.0% | 15.1-24.8 | ~$0 | <1 ms | - |
+| gpt-oss-20b | 67.0% | 61.7-72.3 | 64.9% | 57.2-71.6 | $0.042 | 585 / 1,371 ms | 0% |
+| gpt-oss-120b | 72.3% | 67.0-77.3 | 67.4% | 59.3-74.6 | $0.085 | 603 / 1,310 ms | 0% |
 
 - Both LLMs beat the classical model by a wide margin; the intervals do not overlap.
-- 120b vs 20b: +5 points for 2x the price, but the intervals overlap a lot - on 154 tickets we **cannot** say
-  120b is better.
+- 120b vs 20b: +5 points for 2x the price, but the intervals overlap - we **cannot** say 120b is better.
 - Cost is tiny either way: ~360 input + ~51 output tokens per ticket; for AmazonHelp's 12,540 tickets/week,
-  triage costs about $1 a week on 120b (`numbers.json` roi). Latency (~0.6 s) is fine for a queue, not for
-  per-keystroke use.
-- Failure examples (`outputs/eval_failures_interim_llm.csv`): most LLM "errors" are borderline cases between
-  complaint_feedback and refund_return ("store is selling expired milk") or tweets with no context ("The affected
-  number is 0902..."). Some of these are label ambiguity, not model error - a second labeller would show how
-  much (see Limits).
+  triage costs about $1 a week on 120b (`numbers.json` roi). Latency (~0.6 s) is fine for a queue.
+- Failure examples (`outputs/eval_failures.csv`): most LLM "errors" are borderline cases between
+  complaint_feedback and refund_return or tweets with no context. Some are label ambiguity, not model error -
+  a second labeller would show how much (see Limits).
 
-## Result 3 - urgency rules (final for rules-only)
-| Set | Urgent tickets | Rules recall | Rules precision |
+## Result 3 - zero-shot vs few-shot (dev only, gpt-oss-20b, 93 tickets)
+| Prompt | Accuracy | 95% CI | Cost / 1,000 | Latency p50 |
+|---|---|---|---|---|
+| Zero-shot | 77.4% | 69.9-85.0 | $0.043 | 624 ms |
+| Few-shot (examples from dev) | 74.2% | 65.6-82.8 | $0.058 | 1,006 ms |
+
+Adding examples did not help (intervals overlap) and cost ~35% more and was slower, so the test runs use zero-shot.
+Only 93 of 100 dev tickets are scored: the 7 used as few-shot examples are left out of both rows.
+
+## Result 4 - urgency: rules alone vs rules + "AI may raise"
+| Set | Urgent tickets | Rules only: caught / flagged | Rules + 120b may raise: caught / flagged |
 |---|---|---|---|
-| Test split (300) | 16 | 81.2% (13/16) | 86.7% (13/15) |
-| Fresh hold-out (150) | 10 | **30.0% (3/10)** | 75.0% (3/4) |
+| Test split (300) | 16 | 13 / 15 (recall 81.2%) | 13 / 17 (recall 81.2%, precision 76.5%) |
+| Fresh hold-out (150) | 10 | **3 / 4 (recall 30.0%)** | **7 / 8 (recall 70.0%, precision 87.5%)** |
 
-The rules were written while reading eval-set tweets, so the test-split number is optimistic. On fresh tweets
-they caught only 3 of 10 urgent ones. That is the case for letting the AI **raise** urgency. The
-"rules + AI may raise" rows are computed automatically once the LLM run is complete (`urgency` in numbers.json).
-
-## Not run yet (needs `GROQ_API_KEY`)
-- LLM rows on all 300 test tickets; few-shot vs zero-shot ablation on dev; AI-raise urgency on test and hold-out.
-- How: add the key (`.env` locally, or the `GROQ_API_KEY` repo secret) and run `make evals` or the CI
-  `reproduce` job. Cached calls are reused; only missing ones are made (about 700 calls, ~400 tokens each, which should
-  fit Groq's free limit of 200K tokens per model per day). The interim table above is replaced by the full one automatically.
+The rules were written while reading eval-set tweets, so their test-split number is optimistic; on fresh tweets
+they caught only 3 of 10. Letting the AI raise (never lower) urgency caught 4 more on the hold-out with one extra
+false alarm. 10 urgent tickets is a small sample: read it as a direction, not a precise rate.
 
 ## Limits
 - One labeller, no inter-annotator agreement. Several LLM "failures" are arguable.
