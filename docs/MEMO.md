@@ -2,14 +2,14 @@
 
 **To**: Head of Customer Support (illustrative client: a team handling AmazonHelp's ticket volume)
 **From**: Pranay Sarkar
-**Data**: 724,846 real support tickets to 108 brands on Twitter, 9 Oct - 3 Dec 2017; 300 hand-labelled test
-tweets. All numbers from `outputs/numbers.json`; assumptions marked **[A]**.
+**Data**: 724,846 real support tickets to 108 brands on Twitter, 9 Oct - 3 Dec 2017; 300 test tweets labelled
+with a written guide (AI-assisted; blind human re-check pending). All numbers from `outputs/numbers.json`; assumptions marked **[A]**.
 
 ## 1. Answer first
 - **Do not** switch on the classical (keyword-style) router. On real tweets it is right 20% of the time, below
   the 33% break-even, so it would **cost** about 21 agent-hours a week instead of saving them.
 - **Do** run a 6-week pilot of LLM-suggested queues + draft replies, with an agent approving every reply.
-  Evidence (300 hand-labelled tweets): 72% routing accuracy for ~$1 per week of model cost.
+  Evidence (300 labelled tweets, AI-assisted labels): 72% routing accuracy for ~$1 per week of model cost.
 - Expected saving at base assumptions: **~61 agent-hours/week from routing** (≈1.5 FTE), plus **50-468 hours
   from drafts** - a wide range because draft usefulness is not measured yet. The pilot measures it.
 

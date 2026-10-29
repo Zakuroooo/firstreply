@@ -6,7 +6,7 @@ leader can act on.
 
 - Real timestamps: 724,846 tickets to 108 brands (Twitter, 2017) -> first-response time, breach rate, backlog,
   forecast and staffing.
-- Same exam for every model: 300 hand-labelled real tweets; classical TF-IDF + logistic regression vs two LLMs.
+- Same exam for every model: 300 real tweets labelled with a written guide (AI-assisted; blind human re-check pending, `scripts/recheck.py`); classical TF-IDF + logistic regression vs two LLMs.
 - Urgency: rules decide, the AI may only **raise** urgency, never lower it.
 - Agent queue app: urgent first, suggested queue + draft, approve / edit / reject, every decision logged.
 - Consulting memo: process map, staffing, ROI in agent-hours with ranges, rollout plan, risks -> [docs/MEMO.md](docs/MEMO.md).

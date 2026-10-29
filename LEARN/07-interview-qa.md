@@ -7,7 +7,7 @@ Numbers come from `outputs/numbers.json`.
 **1. Tell me about FirstReply in one minute.**
 I took 724,846 real support tickets from Twitter and measured how fast brands first reply. Median is about
 24 minutes, but 35% miss a one-hour target and the slowest 10% wait about 9 hours. Then I asked: would AI
-triage help? I tested a classical model and two LLMs on the same 300 hand-labelled tweets, with cost and
+triage help? I tested a classical model and two LLMs on the same 300 labelled tweets (AI-assisted labels, human re-check pending), with cost and
 latency. The classical model fell from 99.9% on clean data to 20% on real tweets. LLMs reached 67-72% on
 the same 300 tweets, for under 10 cents per 1,000 tickets. I wrote it up as a memo: what to pilot, how many
 hours it may save, and how to roll it out safely with a human approving every reply.

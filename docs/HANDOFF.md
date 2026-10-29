@@ -20,7 +20,7 @@ frozen until the cloud work is pulled back.
   taken from Groq's own docs; cost per ticket is tracked per call in `src/firstreply/llm.py`.
 - Analytics: DuckDB SQL in `sql/01–05`; `src/firstreply/analytics.py`, `staffing.py`. Result so far: 724,846 tickets,
   8 weeks, 108 brands; SLA breach % at 15/60/240 min; backlog; seasonal-naive forecast won on WAPE (see numbers.json "sla").
-- Eval set: **400 real tweets hand-labelled** by a written rule set without seeing model outputs
+- Eval set: **400 real tweets labelled** (by the AI session, not by hand) with a written rule set without seeing model outputs
   (`evalset/tickets.csv`, `labels.csv`) → **100 dev / 300 test**. Few-shot examples and the classical "other"
   threshold come from dev only. A separate fresh **150-tweet urgency hold-out** (`evalset/urgency_holdout.csv`)
   tests the urgency rules on text not read while writing them.

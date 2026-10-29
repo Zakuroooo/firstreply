@@ -23,7 +23,7 @@ Every fact below is in `outputs/numbers.json` (key shown) and was produced by `m
 
 ## Resume bullets (pick 4)
 1. Measured **first-response SLAs** on 724,846 support tickets: 35% missed a 1-hour target, p90 wait 9 hours
-2. Showed a classifier scoring **99.9% on clean data** fell to **20% on 300 real, hand-labelled tweets**
+2. Showed a classifier scoring **99.9% on clean data** fell to **20% on 300 real tweets**
 3. Built an eval harness comparing accuracy, **cost per 1,000 tickets** and latency; LLM triage cost under $0.10
 4. Forecast hourly volume at **27.6% error** (vs 34.9% flat) and sized **staffing and ROI** in agent-hours saved
 
