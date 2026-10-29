@@ -1,0 +1,41 @@
+{
+  "sla": {
+    "answered": 677076,
+    "answered_pct": 93.4,
+    "backlog_median": 2140,
+    "backlog_peak": 3856,
+    "best_hour_breach_pct": 26.8,
+    "best_hour_utc": 23,
+    "brands": 108,
+    "brands_with_1000_plus": 75,
+    "breach_pct": 35.0,
+    "breach_pct_at_15min": 58.6,
+    "breach_pct_at_240min": 17.2,
+    "breach_pct_at_60min": 35.0,
+    "fastest_brand": "Postmates_Help",
+    "fastest_brand_median_min": 2.3,
+    "forecast_best_method": "seasonal_naive",
+    "forecast_brand": "AmazonHelp",
+    "forecast_brand_tickets_per_week": 12540,
+    "forecast_wape_pct": {
+      "flat_last_week_mean": 34.9,
+      "hour_of_week_mean": 31.6,
+      "seasonal_naive": 27.6
+    },
+    "median_frt_min": 23.7,
+    "p90_frt_min": 535.2,
+    "sla_minutes": 60,
+    "slowest_brand": "DropboxSupport",
+    "slowest_brand_median_min": 1505.2,
+    "staffing_agent_hours_per_week_erlang": 1381,
+    "staffing_agent_hours_per_week_workload": 1556,
+    "staffing_aht_min": 6.0,
+    "staffing_occupancy": 0.85,
+    "staffing_peak_agents_erlang": 13,
+    "staffing_peak_agents_workload": 15,
+    "tickets": 724846,
+    "window": "2017-10-09 to 2017-12-03",
+    "worst_hour_breach_pct": 43.6,
+    "worst_hour_utc": 4
+  }
+}

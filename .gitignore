@@ -1,0 +1,11 @@
+.venv/
+.env
+raw/
+data/
+*.parquet
+*.zip
+__pycache__/
+.pytest_cache/
+CLAUDE.md
+.claude/
+app/approvals.db
