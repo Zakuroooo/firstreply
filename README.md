@@ -18,7 +18,7 @@ reply, and turns the result into an ROI memo a support leader can act on.
 - **Consulting memo**: process map, staffing, ROI in agent-hours with ranges, rollout plan, risks:
   [docs/MEMO.md](docs/MEMO.md).
 
-**Live demo**: not deployed yet, see [docs/RUNBOOK.md](docs/RUNBOOK.md) for the deploy steps.
+**Live demo**: [firstreply.streamlit.app](https://firstreply.streamlit.app) — the agent queue on Streamlit Community Cloud (approvals are kept in SQLite and reset when the app restarts).
 
 ![Agent queue app, desktop](docs/images/queue-app-desktop.png)
 
@@ -258,6 +258,6 @@ Read these before quoting any number.
 - **Old, single-channel data**: Twitter only, 2017, UTC. The 60-minute SLA, 6-minute handle time and 85%
   occupancy are assumptions.
 - **ROI drafting savings are assumptions** with a wide low/base/high range until a pilot measures them.
-- **Not deployed**: the app has only been run locally and in a container.
+- **Demo storage**: the live queue stores approvals in SQLite on the app server, so they reset when Streamlit restarts the app; a pilot would use Postgres.
 - **Licences**: the Twitter dataset is CC BY-NC-SA 4.0 (non-commercial); Bitext is CDLA-Sharing 1.0. This is a
   portfolio project, not a commercial product.

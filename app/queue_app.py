@@ -59,7 +59,10 @@ with st.sidebar:
     if p.exists():
         preds_cols = [c for c in pd.read_csv(p, nrows=1).columns
                       if c not in ("eval_id", "brand", "clean_text", "label", "urgent")]
-    model_column = st.selectbox("Suggestion model", preds_cols or ["tfidf_logreg"])
+    options = preds_cols or ["tfidf_logreg"]
+    # Open on the most accurate model (gpt-oss-120b, 72.3% on the test set) when its predictions exist.
+    default = next((i for i, c in enumerate(options) if "120b" in c), 0)
+    model_column = st.selectbox("Suggestion model", options, index=default)
     st.subheader("Eval loop")
     decisions = log.decisions()
     stats = hitl.loop_stats(decisions)
